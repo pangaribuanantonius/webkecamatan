@@ -41,7 +41,8 @@
                 Pemerintahan
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Kepeawaian</a></li>
+                <li><a class="dropdown-item" href="#">Kepegawaian</a></li>
+                <li><a class="dropdown-item" href="#">Desa/Kelurahan</a></li>
               </ul> 
             </li>
             <li class="nav-item dropdown">
