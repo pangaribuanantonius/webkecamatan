@@ -31,16 +31,18 @@
                 Profil
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Sejarah</a></li>
-                <li><a class="dropdown-item" href="#">Letak Geografis</a></li>
-                <li><a class="dropdown-item" href="#">Batas Wilayah</a></li>
+                <li><a class="dropdown-item" href="#">Tentang</a></li>
                 <li><a class="dropdown-item" href="#">Visi dan Misi</a></li>
                 <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
-                <li><a class="dropdown-item" href="#">Potensi Kecamatan</a></li>
               </ul> 
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pemerintahan</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Pemerintahan
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Kepeawaian</a></li>
+              </ul> 
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

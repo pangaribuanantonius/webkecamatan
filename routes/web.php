@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\FotoController;
+use App\Http\Controllers\TentangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,7 @@ use App\Http\Controllers\FotoController;
 });*/
 
 Route::get('/', [BeritaController::class, 'index'])->name('index');
-Route::get('/sejarah', function () {
-    return view('sejarah');
-});
+Route::get('/tentang', [TentangController::class, 'tentang'])->name('tentang');
+
 
 
