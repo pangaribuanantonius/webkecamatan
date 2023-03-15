@@ -22,6 +22,9 @@ use App\Http\Controllers\TentangController;
 
 Route::get('/', [BeritaController::class, 'index'])->name('index');
 Route::get('/tentang', [TentangController::class, 'tentang'])->name('tentang');
+Route::get('/visimisi', function () {
+    return view('visimisi');
+});
 
 
 
