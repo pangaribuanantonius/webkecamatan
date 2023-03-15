@@ -61,6 +61,7 @@
       </div>
     </nav>
     </section>
+    <br><br><br><br><br>
 
     @yield('layout')
 
