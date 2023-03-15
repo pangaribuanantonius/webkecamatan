@@ -42,6 +42,7 @@
     </button>
   </div>
 </section>
+<marquee class="bg-dark text-white"><p class="m-2">"test"</p></marquee>
 
 <br><br>
 
