@@ -20,5 +20,8 @@ use App\Http\Controllers\FotoController;
 });*/
 
 Route::get('/', [BeritaController::class, 'index'])->name('index');
+Route::get('/sejarah', function () {
+    return view('sejarah');
+});
 
 
