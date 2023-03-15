@@ -32,8 +32,8 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="{{ route('tentang') }}">Tentang</a></li>
-                <li><a class="dropdown-item" href="#">Visi dan Misi</a></li>
-                <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
+                <li><a class="dropdown-item" href="visimisi">Visi dan Misi</a></li>
+                <li><a class="dropdown-item" href="strukturorganisasi">Struktur Organisasi</a></li>
               </ul> 
             </li>
             <li class="nav-item dropdown">
