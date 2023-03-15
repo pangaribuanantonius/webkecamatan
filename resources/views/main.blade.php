@@ -31,7 +31,7 @@
                 Profil
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Tentang</a></li>
+                <li><a class="dropdown-item" href="{{ route('tentang') }}">Tentang</a></li>
                 <li><a class="dropdown-item" href="#">Visi dan Misi</a></li>
                 <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
               </ul> 
