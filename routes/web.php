@@ -29,6 +29,9 @@ Route::get('/visimisi', function () {
 Route::get('/strukturorganisasi', function () {
     return view('strukturorganisasi');
 });
+Route::get('/kepegawaian', function () {
+    return view('kepegawaian');
+});
 
 
 
