@@ -41,7 +41,7 @@
                 Pemerintahan
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="kepegawaian">Kepegawaian</a></li>
+                <li><a class="dropdown-item" href="{{ route('kepegawaian') }}">Kepegawaian</a></li>
                 <li><a class="dropdown-item" href="#">Desa/Kelurahan</a></li>
               </ul> 
             </li>
