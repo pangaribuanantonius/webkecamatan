@@ -53,7 +53,7 @@
       @foreach($berita as $news)
       <div class="col-4">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1677352241429-dc90cfc7a623?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80" class="card-img-top" alt="...">
+          <img src="{{ \URL::to('').'/konten/foto_berita/'. $news->foto_berita}}" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">{{$news->judul_berita}}</p>
           </div>
