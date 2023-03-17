@@ -5,6 +5,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\KepegawaianController;
+use App\Http\Controllers\DesaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ use App\Http\Controllers\KepegawaianController;
 Route::get('/', [BeritaController::class, 'index'])->name('index');
 Route::get('/tentang', [TentangController::class, 'tentang'])->name('tentang');
 Route::get('/kepegawaian', [KepegawaianController::class, 'kepegawaian'])->name('kepegawaian');
+Route::get('/desa', [DesaController::class, 'desa'])->name('desa');
 
 Route::get('/visimisi', function () {
     return view('visimisi');

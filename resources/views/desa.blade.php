@@ -10,20 +10,14 @@
               <br>
               <table class="table table-bordered" bordered="1" width="100%" cellspacing="0" cellpadding="1">
                 <thead>
-                  <tr class="text-center">
-                    <th>NIP</th>
-                    <th>NAMA</th>
-                    <th>GOLONGAN</th>
-                    <th>JABATAN</th>
+                  <tr>
+                    <th>Nama Desa</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach($kepegawaian as $pegawai)
+                  @foreach($desa as $pegawai)
                   <tr>
-                    <td>{{$pegawai->nip}}</td>
                     <td>{{$pegawai->nama}}</td>
-                    <td>{{$pegawai->golongan}}</td>
-                    <td>{{$pegawai->jabatan}}</td>
                   </tr>
                   @endforeach
                 </tbody>
