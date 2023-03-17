@@ -55,7 +55,9 @@
         <div class="card">
           <img src="{{ \URL::to('').'/konten/foto_berita/'. $news->foto_berita}}" class="card-img-top" alt="...">
           <div class="card-body">
-            <p class="card-text">{{$news->judul_berita}}</p>
+            <p class="card-text">
+              <a class="nav-link" href="{{ route('berita-detail', $news->judul_berita) }}">{{$news->judul_berita}}</a>
+            </p>
           </div>
         </div><br>
       </div>

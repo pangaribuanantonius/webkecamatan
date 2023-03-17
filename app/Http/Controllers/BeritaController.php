@@ -13,4 +13,8 @@ class BeritaController extends Controller
         $foto = \App\Models\Foto::all();
         return view('index', ['berita' => $berita, 'foto' => $foto]);
     }
+    public function beritadetail(Berita $berita){
+        $berita = Berita::findOrFail($berita);
+        return view('berita-detail', ['berita' => $berita]);
+    }
 }
