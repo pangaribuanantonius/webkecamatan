@@ -5,12 +5,24 @@
       <div class="container">
         <div class="row">
           <div class="card col-8" align="justify">
-             @foreach($tentang as $about)
             <p>
-              <h2><strong>{{$about->judul}}</strong></h2>
-              {!! nl2br(e($about->isi)) !!}
+              <h2><strong>Kepegawaian</strong></h2>
+              <br>
+              <table class="table table-bordered" bordered="1" width="100%" cellspacing="0" cellpadding="1">
+                <thead>
+                  <tr>
+                    <th>no</th>
+                    <th>jenis</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                </tbody>
+              </table>
             </p>
-             @endforeach
           </div>
           <div class="col-4">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
