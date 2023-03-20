@@ -26,7 +26,7 @@ Route::get('/index', [BeritaController::class, 'index'])->name('index');
 Route::get('/tentang', [TentangController::class, 'tentang'])->name('tentang');
 Route::get('/kepegawaian', [KepegawaianController::class, 'kepegawaian'])->name('kepegawaian');
 Route::get('/desa', [DesaController::class, 'desa'])->name('desa');
-Route::get('/berita-detail/{judul_berita}', [BeritaController::class, 'beritadetail'])->name('berita-detail');
+Route::get('/{id_berita}', [BeritaController::class, 'show'])->name('berita-detail');
 
 Route::get('/visimisi', function () {
     return view('visimisi');

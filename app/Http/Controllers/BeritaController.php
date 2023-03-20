@@ -13,8 +13,8 @@ class BeritaController extends Controller
         $foto = \App\Models\Foto::all();
         return view('index', ['berita' => $berita, 'foto' => $foto]);
     }
-    public function beritadetail(Berita $berita){
-        $berita = Berita::findOrFail($berita);
+    public function show($id_berita){
+        $berita = \App\Models\Berita::where('id_berita', $id_berita)->first();
         return view('berita-detail', ['berita' => $berita]);
     }
 }
