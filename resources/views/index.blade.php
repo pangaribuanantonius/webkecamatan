@@ -53,12 +53,14 @@
       @foreach($berita as $news)
       <div class="col-4">
         <div class="card">
-          <img src="{{ \URL::to('').'/konten/foto_berita/'. $news->foto_berita}}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">
-              <a class="nav-link" href="{{ route('berita-detail', $news->id_berita) }}">{{$news->judul_berita}}</a>
-            </p>
-          </div>
+          <a class="nav-link text-dark" href="{{ route('berita-detail', $news->id_berita) }}">
+            <img src="{{ \URL::to('').'/konten/foto_berita/'. $news->foto_berita}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">
+                {{$news->judul_berita}}
+              </p>
+            </div>
+          </a>
         </div><br>
       </div>
       @endforeach
@@ -86,9 +88,9 @@
     <a class="nav-link text-center text-dark" href="#">Selengkapnya</a>
   </div>
 </section>
-<br><br><br><br>
+<br><br>
 
-<section align="center">
+<!-- <section align="center">
   <div class="container">
     <div class="row">
       <div class="col-3">
@@ -118,7 +120,7 @@
     </div>
   </div>
 </section>
-<br><br>
+<br><br> -->
 
     <!-- <section class="mb-5">
       <div class="container"> 

@@ -22,7 +22,7 @@ use App\Http\Controllers\DesaController;
     return view('welcome');
 });*/
 
-Route::get('/index', [BeritaController::class, 'index'])->name('index');
+Route::get('/', [BeritaController::class, 'index']);
 Route::get('/tentang', [TentangController::class, 'tentang'])->name('tentang');
 Route::get('/kepegawaian', [KepegawaianController::class, 'kepegawaian'])->name('kepegawaian');
 Route::get('/desa', [DesaController::class, 'desa'])->name('desa');
