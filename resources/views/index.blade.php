@@ -48,7 +48,7 @@
 
 <section>
   <div class="container">
-    <h1><center>Galeri 1</center></h1>
+    <h1><center>Update terbaru</center></h1>
     <div class="row">
       @foreach($berita as $news)
       <div class="col-4">
@@ -72,7 +72,7 @@
 
 <section>
   <div class="container">
-    <h1><center>Galeri 2</center></h1>
+    <h1><center>Galeri</center></h1>
     <div class="row">
       @foreach($foto as $fot)
       <div class="col-4">

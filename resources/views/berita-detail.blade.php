@@ -6,7 +6,7 @@
     <div class="row">
       <div class="card col-8" align="justify">
         <p>
-          <h1>{{$berita->judul_berita}}</h1>
+          <h1>{{ $berita->judul_berita }}</h1>
           <img src="{{ \URL::to('').'/konten/foto_berita/'. $berita->foto_berita}}" class="card-img-top" alt="...">
           {!! nl2br(e($berita->isi_berita)) !!}
         </p>
