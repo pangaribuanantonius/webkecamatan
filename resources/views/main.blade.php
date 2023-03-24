@@ -70,7 +70,7 @@
     <section class="bg-dark text-white">
       <div class="container">
         <div class="row text-white">
-           <div class="col-3">
+           <div class="col-md-3">
              <p>
                <h2>
                 <strong>Kecamatan<br>Lubuk Pakam</strong>
@@ -89,7 +89,7 @@
               pangaribuanantonius@gmail.com
             </p>
           </div>
-          <div class="col-2">
+          <div class="col-md-2">
            <p>
              <h4>Profil</h4>
              <br>
@@ -104,7 +104,7 @@
              <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Potensi
            </p>
           </div>
-          <div class="col-2">
+          <div class="col-md-2">
             <p>
              <h4>Tautan</h4>
              <br>
@@ -117,7 +117,7 @@
              <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Tautan 4
            </p>
           </div>
-          <div class="col-5" align="center">
+          <div class="col-md-5" align="center">
             <br>
             <p>
              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.1194531755973!2d98.86853691414554!3d3.5599536514840713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031496a5019990f%3A0xf6fd7a86540fde97!2sKANTOR%20DINAS%20KOMINFO%20(Komunikasi%20Dan%20Informatika)!5e0!3m2!1sid!2sid!4v1678071831150!5m2!1sid!2sid" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
