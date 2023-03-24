@@ -83,7 +83,7 @@
       @foreach($video as $vid)
       <div class="col-6 col-sm-6 col-md-4">
         <div class="card">
-          <iframe src="{{ $vid->link }}"></iframe>
+          <iframe src="https://www.youtube.com/embed/{{ $vid->link }}"></iframe>
           <div class="card-body">
             <p class="card-text" align="justify">
               {{ $vid->judul }}

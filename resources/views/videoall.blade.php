@@ -8,7 +8,7 @@
       @foreach($videoall as $vidall)
       <div class="col-md-4">
         <div class="card">
-            <iframe src="{{ $vidall->link }}"></iframe>
+            <iframe src="https://www.youtube.com/embed/{{ $vidall->link }}"></iframe>
             <div class="card-body">
               <p class="card-text" align="justify">
                 {{$vidall->judul}}
