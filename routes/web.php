@@ -26,15 +26,17 @@ Route::get('/visimisi', function () {
     return view('visimisi');
 });
 
+//admin
+Route::get('/beranda/', function () {
+    return view('beranda.index');
+});
+
+
+
 Route::get('/', [BeritaController::class, 'index']);
 Route::get('/tentang', [TentangController::class, 'tentang'])->name('tentang');
 Route::get('/kepegawaian', [KepegawaianController::class, 'kepegawaian'])->name('kepegawaian');
 Route::get('/desa', [DesaController::class, 'desa'])->name('desa');
 Route::get('/{id_berita}', [BeritaController::class, 'show'])->name('berita-detail');
 
-//admin
 
-
-Route::get('beranda/index', function () {
-    return view('beranda.index');
-});
