@@ -71,7 +71,7 @@
       </div>
       @endforeach
     </div>
-    <a class="nav-link text-center text-dark" href="#">Selengkapnya</a>
+    <a class="nav-link text-center text-dark" href="{{ route('beritaall') }}">Selengkapnya</a>
   </div>
 </section>
 <br><br>
@@ -93,7 +93,7 @@
       </div>
       @endforeach
     </div>
-    <a class="nav-link text-center text-dark" href="#">Selengkapnya</a>
+    <a class="nav-link text-center text-dark" href="{{ route('videoall') }}">Selengkapnya</a>
   </div>
 </section>
 <br><br>

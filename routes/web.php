@@ -6,6 +6,8 @@ use App\Http\Controllers\FotoController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\KepegawaianController;
 use App\Http\Controllers\DesaController;
+use App\Http\Controllers\BeritaAllController;
+use App\Http\Controllers\VideoAllController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,8 @@ Route::get('/', [BeritaController::class, 'index']);
 Route::get('/tentang', [TentangController::class, 'tentang'])->name('tentang');
 Route::get('/kepegawaian', [KepegawaianController::class, 'kepegawaian'])->name('kepegawaian');
 Route::get('/desa', [DesaController::class, 'desa'])->name('desa');
+Route::get('/beritaall', [BeritaAllController::class, 'beritaall'])->name('beritaall');
+Route::get('/videoall', [VideoAllController::class, 'videoall'])->name('videoall');
 Route::get('/{id_berita}', [BeritaController::class, 'show'])->name('berita-detail');
 
 
