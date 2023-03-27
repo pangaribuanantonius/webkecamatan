@@ -8,6 +8,7 @@ use App\Http\Controllers\KepegawaianController;
 use App\Http\Controllers\DesaController;
 use App\Http\Controllers\BeritaAllController;
 use App\Http\Controllers\VideoAllController;
+use App\Http\Controllers\InfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,10 +29,19 @@ Route::get('/visimisi', function () {
     return view('visimisi');
 });
 
+/*Route::get('/admin', function () {
+    return view('admin');
+});*/
+
 //admin
-Route::get('/beranda/', function () {
+Route::get('/beranda/index', function () {
     return view('beranda.index');
 });
+
+
+/*Route::get('/info/', function () {
+    return view('info.index');
+});*/
 
 
 
@@ -43,4 +53,9 @@ Route::get('/beritaall', [BeritaAllController::class, 'beritaall'])->name('berit
 Route::get('/videoall', [VideoAllController::class, 'videoall'])->name('videoall');
 Route::get('/{id_berita}', [BeritaController::class, 'show'])->name('berita-detail');
 
+
+//admin
+Route::get('/info/index', [InfoController::class, 'index'])->name('info.index');
+Route::get('/info/create', [InfoController::class, 'create'])->name('info.create');
+Route::post('/info/store', [InfoController::class, 'store'])->name('info.store');
 
