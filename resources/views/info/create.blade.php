@@ -12,14 +12,13 @@
 				<label>Isi</label>
 				<input type="text" name="isi" class="form-control">
 			</div>
-			<div align="right">
-				<button class="btn btn-success btn-icon-split">
-					<span class="icon text-white-50">
-						<i class="fas fa-check"></i>
-					</span>
-					<span class="text">Simpan</span>
-				</button>
-			</div>
+
+			<button class="btn btn-success btn-icon-split">
+				<span class="icon text-white-50">
+					<i class="fas fa-check"></i>
+				</span>
+				<span class="text">Simpan</span>
+			</button>
 		</form>
 	</div>
 </div>

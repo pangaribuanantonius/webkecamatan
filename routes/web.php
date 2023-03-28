@@ -58,4 +58,7 @@ Route::get('/{id_berita}', [BeritaController::class, 'show'])->name('berita-deta
 Route::get('/info/index', [InfoController::class, 'index'])->name('info.index');
 Route::get('/info/create', [InfoController::class, 'create'])->name('info.create');
 Route::post('/info/store', [InfoController::class, 'store'])->name('info.store');
+Route::get('/info/{info}/edit', [InfoController::class, 'edit'])->name('info.edit');
+Route::patch('/info/{info}/edit', [InfoController::class, 'update'])->name('info.edit');
+Route::delete('/info/{info}/delete', [InfoController::class, 'destroy'])->name('info.delete');
 

@@ -23,4 +23,20 @@ class InfoController extends Controller
         return redirect('info/index');
     }
 
+     public function edit(Info $info){
+        return view('info.edit', ['info' => $info]);
+    }
+
+    public function update(Request $request, Info $info){
+        $info->update([
+            'isi' => $request->isi,
+            ]);
+        return redirect('info/index');
+    }
+
+    public function destroy(Request $request, Info $info){
+            $info::destroy($info->id);
+        return redirect('info/index');
+    }
+
 }

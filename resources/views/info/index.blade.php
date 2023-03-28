@@ -26,7 +26,9 @@
 					@foreach($runningtext as $info)
 					<tr>
 						<td>{{$info->isi}}</td>
-						<td><a href="#"><i class="fas fa-edit"></i></a></td>
+						<td class="text-center">
+							<a href="{{ route('info.edit', $info->id) }}"><i class="fas fa-edit"></i></a>
+						</td>
 					</tr>
 					@endforeach
 				</tbody>

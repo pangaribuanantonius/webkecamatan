@@ -11,6 +11,7 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" type="text/css" href="asset/fontawesome-free-6.3.0-web/css/all.min.css">
 
+
     <title>Membuat template website</title>
   </head>
   <body>
@@ -135,7 +136,7 @@
    <!-- Optional JavaScript; choose one of the two! -->
 
    <!-- Option 1: Bootstrap Bundle with Popper -->
-   <!-- script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
 
    <!-- Option 2: Separate Popper and Bootstrap JS -->
 
