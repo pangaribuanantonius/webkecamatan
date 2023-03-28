@@ -423,6 +423,17 @@
     <!-- datatable -->
     <!-- <script type="text/javascript" src="{{ asset('asset/datatable/datatables.min.js') }}"></script> -->
 
+    <!-- ckeditor -->
+    <script src="{{asset('asset/ckeditor/ckeditor.js')}}"></script>
+
+    <script>
+       var konten = document.getElementById("konten");
+       CKEDITOR.replace(konten,{
+         language:'en-gb'
+     });
+       CKEDITOR.config.allowedContent = true;
+   </script>
+
 
 </body>
 

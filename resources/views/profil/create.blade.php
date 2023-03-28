@@ -15,7 +15,7 @@
 
 			<div class="form-group">
 				<label>Isi/Keterangan</label>
-				<input type="text" name="isi" class="form-control">
+				<textarea id="konten" name="isi" style="height: 100px;" class="form-control"></textarea>
 			</div>
 
 			<button class="btn btn-success btn-icon-split">

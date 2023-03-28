@@ -15,7 +15,7 @@
 			</div>
 			<div class="form-group">
 				<label>Isi/Keterangan</label>
-				<input type="text" name="isi" value="{{ $profil->isi }}" class="form-control">
+				<textarea id="konten" name="isi" style="height: 100px;" class="form-control">{{ $profil->isi }}</textarea>
 			</div>
 			<button class="btn btn-success btn-icon-split">
 				<span class="icon text-white-50">
