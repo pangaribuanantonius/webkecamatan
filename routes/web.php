@@ -9,6 +9,8 @@ use App\Http\Controllers\DesaController;
 use App\Http\Controllers\BeritaAllController;
 use App\Http\Controllers\VideoAllController;
 use App\Http\Controllers\InfoController;
+use App\Http\Controllers\ProfilController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +64,9 @@ Route::get('/info/{info}/edit', [InfoController::class, 'edit'])->name('info.edi
 Route::patch('/info/{info}/edit', [InfoController::class, 'update'])->name('info.edit');
 Route::delete('/info/{info}/delete', [InfoController::class, 'destroy'])->name('info.delete');
 
+Route::get('/profil/index', [ProfilController::class, 'index'])->name('profil.index');
+Route::get('/profil/create', [ProfilController::class, 'create'])->name('profil.create');
+Route::post('/profil/store', [ProfilController::class, 'store'])->name('profil.store');
+Route::get('/profil/{profil}/edit', [ProfilController::class, 'edit'])->name('profil.edit');
+Route::patch('/profil/{profil}/edit', [ProfilController::class, 'update'])->name('profil.edit');
+Route::delete('/profil/{profil}/delete', [ProfilController::class, 'destroy'])->name('profil.delete');
