@@ -10,6 +10,7 @@ use App\Http\Controllers\BeritaAllController;
 use App\Http\Controllers\VideoAllController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\VisimisiController;
 
 
 /*
@@ -70,3 +71,9 @@ Route::post('/profil/store', [ProfilController::class, 'store'])->name('profil.s
 Route::get('/profil/{profil}/edit', [ProfilController::class, 'edit'])->name('profil.edit');
 Route::patch('/profil/{profil}/edit', [ProfilController::class, 'update'])->name('profil.edit');
 Route::delete('/profil/{profil}/delete', [ProfilController::class, 'destroy'])->name('profil.delete');
+
+Route::get('/visimisi/index', [VisiMisiController::class, 'index'])->name('visimisi.index');
+Route::get('/visimisi/{visimisi}/edit', [VisimisiController::class, 'edit'])->name('visimisi.edit');
+Route::patch('/visimisi/{visimisi}/edit', [VisimisiController::class, 'update'])->name('visimisi.edit');
+
+Route::get('/strukturorganisasi/index', [StrukturorganisasiController::class, 'index'])->name('strukturorganisasi.index');

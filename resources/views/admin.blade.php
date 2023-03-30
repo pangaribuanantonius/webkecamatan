@@ -86,7 +86,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Profil</h6>
                         <a class="collapse-item" href="{{ route('profil.index') }}">Tentang</a>
-                        <a class="collapse-item" href="buttons.html">Visi dan Misi</a>
+                        <a class="collapse-item" href="{{ route('visimisi.index') }}">Visi dan Misi</a>
                         <a class="collapse-item" href="cards.html">Struktur Organisasi</a>
                     </div>
                 </div>
