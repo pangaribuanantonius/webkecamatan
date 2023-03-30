@@ -8,7 +8,7 @@
              @foreach($tentang as $about)
             <p>
               <h2><strong>{{$about->judul}}</strong></h2>
-              {!! nl2br(e($about->isi)) !!}
+              {!! nl2br($about->isi) !!}
             </p>
              @endforeach
           </div>
