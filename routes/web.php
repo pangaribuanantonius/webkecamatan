@@ -80,3 +80,10 @@ Route::patch('/visimisi/{visimisi}/edit', [VisimisiController::class, 'update'])
 Route::get('/strukturorganisasi/index', [StrukturorganisasiController::class, 'index'])->name('strukturorganisasi.index');
 Route::get('/strukturorganisasi/{strukturorganisasi}/edit', [StrukturorganisasiController::class, 'edit'])->name('strukturorganisasi.edit');
 Route::patch('/strukturorganisasi/{strukturorganisasi}/edit', [StrukturorganisasiController::class, 'update'])->name('strukturorganisasi.edit');
+
+Route::get('/kepegawaian/index', [KepegawaianController::class, 'index'])->name('kepegawaian.index');
+Route::get('/kepegawaian/create', [KepegawaianController::class, 'create'])->name('kepegawaian.create');
+Route::post('/kepegawaian/store', [KepegawaianController::class, 'store'])->name('kepegawaian.store');
+Route::get('/kepegawaian/{kepegawaian}/edit', [KepegawaianController::class, 'edit'])->name('kepegawaian.edit');
+Route::patch('/kepegawaian/{kepegawaian}/edit', [KepegawaianController::class, 'update'])->name('kepegawaian.edit');
+Route::delete('/kepegawaian/{kepegawaian}/delete', [KepegawaianController::class, 'destroy'])->name('kepegawaian.delete');
