@@ -11,6 +11,7 @@ use App\Http\Controllers\VideoAllController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\VisimisiController;
+use App\Http\Controllers\StrukturorganisasiController;
 
 
 /*

@@ -87,7 +87,7 @@
                         <h6 class="collapse-header">Profil</h6>
                         <a class="collapse-item" href="{{ route('profil.index') }}">Tentang</a>
                         <a class="collapse-item" href="{{ route('visimisi.index') }}">Visi dan Misi</a>
-                        <a class="collapse-item" href="cards.html">Struktur Organisasi</a>
+                        <a class="collapse-item" href="{{ route('strukturorganisasi.index') }}">Struktur Organisasi</a>
                     </div>
                 </div>
             </li>
