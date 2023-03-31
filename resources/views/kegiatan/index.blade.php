@@ -6,7 +6,7 @@
 </div>
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
-		<a href="#" class="btn btn-primary btn-icon-split">
+		<a href="{{ route('kegiatan.create') }}" class="btn btn-primary btn-icon-split">
 			<span class="icon text-white-50">
 				<i class="fas fa-plus"></i>
 			</span>
@@ -27,7 +27,7 @@
 					<tr>
 						<td>{{$kegi->judul_berita}}</td>
 						<td class="text-center">
-							<a href="#"><i class="fas fa-edit"></i></a>
+							<a href="{{ route('kegiatan.edit', $kegi->id_berita) }}"><i class="fas fa-edit"></i></a>
 						</td>
 					</tr>
 					@endforeach

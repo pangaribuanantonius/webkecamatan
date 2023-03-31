@@ -12,6 +12,7 @@ use App\Http\Controllers\InfoController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\VisimisiController;
 use App\Http\Controllers\StrukturorganisasiController;
+use App\Http\Controllers\AdminkegiatanController;
 
 
 /*
@@ -95,4 +96,7 @@ Route::get('/desa/{desa}/edit', [DesaController::class, 'edit'])->name('desa.edi
 Route::patch('/desa/{desa}/edit', [DesaController::class, 'update'])->name('desa.edit');
 Route::delete('/desa/{desa}/delete', [DesaController::class, 'destroy'])->name('desa.delete');
 
-Route::get('/kegiatan/index', [KegiatanController::class, 'index'])->name('kegiatan.index');
+Route::get('/kegiatan/index', [AdminkegiatanController::class, 'index'])->name('kegiatan.index');
+Route::get('/kegiatan/create', [AdminkegiatanController::class, 'create'])->name('kegiatan.create');
+Route::post('/kegiatan/store', [AdminkegiatanController::class, 'store'])->name('kegiatan.store');
+Route::get('/kegiatan/{id_berita}/edit', [AdminkegiatanController::class, 'edit'])->name('kegiatan.edit');
