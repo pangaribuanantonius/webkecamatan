@@ -16,7 +16,7 @@
   </head>
   <body>
     <section>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
       <div class="container">
         <a class="navbar-brand" href="./"><h1>Navbar</h1></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,12 +55,9 @@
               </ul>
             </li>
           </ul>
-          <form class="d-flex">
-            <!-- <button class="btn btn-sm btn-outline-secondary"><a class="nav-link text-dark" href="#" tabindex="-1"><strong>Login</strong></a></button> -->
             <a class="nav-link text-dark" href="#">
                 <strong>Login</strong>
             </a>
-          </form>
         </div>
       </div>
     </nav>

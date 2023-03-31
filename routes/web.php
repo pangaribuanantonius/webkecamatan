@@ -87,3 +87,12 @@ Route::post('/kepegawaian/store', [KepegawaianController::class, 'store'])->name
 Route::get('/kepegawaian/{kepegawaian}/edit', [KepegawaianController::class, 'edit'])->name('kepegawaian.edit');
 Route::patch('/kepegawaian/{kepegawaian}/edit', [KepegawaianController::class, 'update'])->name('kepegawaian.edit');
 Route::delete('/kepegawaian/{kepegawaian}/delete', [KepegawaianController::class, 'destroy'])->name('kepegawaian.delete');
+
+Route::get('/desa/index', [DesaController::class, 'index'])->name('desa.index');
+Route::get('/desa/create', [DesaController::class, 'create'])->name('desa.create');
+Route::post('/desa/store', [DesaController::class, 'store'])->name('desa.store');
+Route::get('/desa/{desa}/edit', [DesaController::class, 'edit'])->name('desa.edit');
+Route::patch('/desa/{desa}/edit', [DesaController::class, 'update'])->name('desa.edit');
+Route::delete('/desa/{desa}/delete', [DesaController::class, 'destroy'])->name('desa.delete');
+
+Route::get('/kegiatan/index', [KegiatanController::class, 'index'])->name('kegiatan.index');
