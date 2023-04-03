@@ -40,7 +40,36 @@ class AdminkegiatanController extends Controller
         return redirect('kegiatan/index');
     }
 
-    public function edit(Berita $id_berita){
-        return view('kegiatan.edit', ['kegiatan' => $id_berita]);
+    public function edit(Berita $kegiatan){
+        return view('kegiatan.edit', ['kegiatan' => $kegiatan]);
     }
+
+     public function update(Request $request, Berita $kegiatan){
+        $datasudahvalidasi = $request->validate([
+            'foto_berita' => 'file|mimes:jpg,png,jpeg|max:1024',
+        ]);
+        
+
+        if ($request->hasFile('foto_berita')) {
+            if ($kegiatan->foto_berita!=='kosong.png') {
+                unlink('konten/foto_berita/'.$kegiatan->foto_berita);
+            }
+            
+            $extFile = $request->foto_berita->getClientOriginalExtension();
+            $namaFile = time().".".$extFile;
+            $request->foto_berita->move('konten/foto_berita', $namaFile);
+            $kegiatan->update([
+            'judul_berita' => $request->judul_berita,
+            'isi_berita' => $request->isi_berita,
+            'foto_berita' => $namaFile,
+            ]);
+        }else{
+            $kegiatan->update([
+            'judul_berita' => $request->judul_berita,
+            'isi_berita' => $request->isi_berita,
+            ]);
+        }
+        return redirect('kegiatan/index');        
+    }
+
 }

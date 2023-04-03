@@ -27,7 +27,7 @@
 					<tr>
 						<td>{{$kegi->judul_berita}}</td>
 						<td class="text-center">
-							<a href="{{ route('kegiatan.edit', $kegi->id_berita) }}"><i class="fas fa-edit"></i></a>
+							<a href="{{ route('kegiatan.edit', $kegi->id) }}"><i class="fas fa-edit"></i></a>
 						</td>
 					</tr>
 					@endforeach

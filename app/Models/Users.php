@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Berita extends Model
+class Users extends Model
 {
-    use HasFactory;
-    protected $table = 'berita';
-    /*protected $primaryKey = 'id_berita';*/
+    use HasFactory, Notifiable;
+    protected $table = 'user';
     protected $guarded = [];
     public $incrementing = false;
+    public function getRouteKeyName(){
+        return 'username';
+    }
 }

@@ -17,8 +17,8 @@ class BeritaController extends Controller
         $video = \App\Models\Video::limit(6)->get();
         return view('index', ['marquee' => $marquee, 'berita' => $berita, 'foto' => $foto, 'video' => $video]);
     }
-    public function show($id_berita){
-        $berita = \App\Models\Berita::where('id_berita', $id_berita)->first();
+    public function show($id){
+        $berita = \App\Models\Berita::where('id', $id)->first();
         return view('berita-detail', ['berita' => $berita]);
     }
 }

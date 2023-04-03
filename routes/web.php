@@ -56,7 +56,7 @@ Route::get('/kepegawaian', [KepegawaianController::class, 'kepegawaian'])->name(
 Route::get('/desa', [DesaController::class, 'desa'])->name('desa');
 Route::get('/beritaall', [BeritaAllController::class, 'beritaall'])->name('beritaall');
 Route::get('/videoall', [VideoAllController::class, 'videoall'])->name('videoall');
-Route::get('/{id_berita}', [BeritaController::class, 'show'])->name('berita-detail');
+Route::get('/{id}', [BeritaController::class, 'show'])->name('berita-detail');
 
 
 //admin
@@ -99,4 +99,5 @@ Route::delete('/desa/{desa}/delete', [DesaController::class, 'destroy'])->name('
 Route::get('/kegiatan/index', [AdminkegiatanController::class, 'index'])->name('kegiatan.index');
 Route::get('/kegiatan/create', [AdminkegiatanController::class, 'create'])->name('kegiatan.create');
 Route::post('/kegiatan/store', [AdminkegiatanController::class, 'store'])->name('kegiatan.store');
-Route::get('/kegiatan/{id_berita}/edit', [AdminkegiatanController::class, 'edit'])->name('kegiatan.edit');
+Route::get('/kegiatan/{kegiatan}/edit', [AdminkegiatanController::class, 'edit'])->name('kegiatan.edit');
+Route::patch('/kegiatan/{kegiatan}/edit', [AdminkegiatanController::class, 'update'])->name('kegiatan.edit');
