@@ -13,6 +13,7 @@ use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\VisimisiController;
 use App\Http\Controllers\StrukturorganisasiController;
 use App\Http\Controllers\AdminkegiatanController;
+use App\Http\Controllers\LoginController;
 
 
 /*
@@ -37,10 +38,6 @@ Route::get('/visimisi', function () {
 /*Route::get('/admin', function () {
     return view('admin');
 });*/
-
-Route::get('/login/login', function () {
-    return view('login.login');
-});
 
 //admin
 Route::get('/beranda/index', function () {
@@ -106,3 +103,7 @@ Route::post('/kegiatan/store', [AdminkegiatanController::class, 'store'])->name(
 Route::get('/kegiatan/{kegiatan}/edit', [AdminkegiatanController::class, 'edit'])->name('kegiatan.edit');
 Route::patch('/kegiatan/{kegiatan}/edit', [AdminkegiatanController::class, 'update'])->name('kegiatan.edit');
 Route::delete('/kegiatan/{kegiatan}/delete', [AdminkegiatanController::class, 'destroy'])->name('kegiatan.delete');
+
+//login
+Route::get('/login/login', [LoginController::class, 'login'])->name('login.login');
+Route::post('/login/login', [LoginController::class, 'postlogin'])->name('login.postlogin');

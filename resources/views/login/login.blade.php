@@ -41,12 +41,13 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Login</h1>
                                     </div>
-                                    <form method="post" action="#" class="user">
+                                    <form method="post" action="{{ route('login.postlogin') }}" class="user" enctype="multipart/form-data">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" placeholder="Masukkan Username...">
+                                            <input type="text" name="username" class="form-control form-control-user" placeholder="Masukkan Username...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" placeholder="Masukkan Password">
+                                            <input type="password" name="password" class="form-control form-control-user" placeholder="Masukkan Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
