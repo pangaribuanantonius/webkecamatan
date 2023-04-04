@@ -72,4 +72,17 @@ class AdminkegiatanController extends Controller
         return redirect('kegiatan/index');        
     }
 
+    public function destroy(Request $request, Berita $kegiatan){
+        if (!$kegiatan->foto_berita == 'kosong.png') {
+            $kegiatan::destroy($kegiatan->id);
+            unlink('konten/foto_berita/'.$kegiatan->foto_berita);
+        }else{
+            $kegiatan::destroy($kegiatan->id);
+            unlink('konten/foto_berita/'.$kegiatan->foto_berita);
+        }
+        
+        return redirect('kegiatan/index');
+
+    }
+
 }

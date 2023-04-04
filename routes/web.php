@@ -38,6 +38,10 @@ Route::get('/visimisi', function () {
     return view('admin');
 });*/
 
+Route::get('/login/login', function () {
+    return view('login.login');
+});
+
 //admin
 Route::get('/beranda/index', function () {
     return view('beranda.index');
@@ -101,3 +105,4 @@ Route::get('/kegiatan/create', [AdminkegiatanController::class, 'create'])->name
 Route::post('/kegiatan/store', [AdminkegiatanController::class, 'store'])->name('kegiatan.store');
 Route::get('/kegiatan/{kegiatan}/edit', [AdminkegiatanController::class, 'edit'])->name('kegiatan.edit');
 Route::patch('/kegiatan/{kegiatan}/edit', [AdminkegiatanController::class, 'update'])->name('kegiatan.edit');
+Route::delete('/kegiatan/{kegiatan}/delete', [AdminkegiatanController::class, 'destroy'])->name('kegiatan.delete');

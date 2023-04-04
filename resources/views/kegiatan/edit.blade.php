@@ -25,11 +25,25 @@
 				<input type="file" name="foto_berita">
 			</div>
 
+			<div class="form-group">
+				<img src="{{ \URL::to('').'/konten/foto_berita/'. $kegiatan->foto_berita}}" width="100">
+			</div>
+
 			<button class="btn btn-success btn-icon-split" type="submit">
 				<span class="icon text-white-50">
 					<i class="fas fa-check"></i>
 				</span>
 				<span class="text">Simpan</span>
+			</button>
+		</form>
+		<form method="post" action="{{ route('kegiatan.delete', ['kegiatan'=>$kegiatan]) }}" enctype="multipart/form-data">
+			@csrf
+			@method('DELETE')
+			<button type="submit" class="btn btn-danger btn-icon-split">
+				<span class="icon text-white-50">
+					<i class="fas fa-trash"></i>
+				</span>
+				<span class="text">Hapus</span>
 			</button>
 		</form>
 	</div>
