@@ -1,5 +1,22 @@
 @extends('admin')
 @section('content')
+
+<!-- <div class="flash-data" data-flashdata="{{ session()->get('flashdata') }}"></div> -->
+
+@if(session()->has('success'))
+<div class="alert alert-success" role="alert">
+  {{ session('success') }}
+</div>
+@elseif(session()->has('update'))
+<div class="alert alert-success" role="alert">
+  {{ session('update') }}
+</div>
+@elseif(session()->has('delete'))
+<div class="alert alert-success" role="alert">
+  {{ session('delete') }}
+</div>
+@endif
+
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
 	<h1 class="h3 mb-0 text-gray-800">Info</h1>

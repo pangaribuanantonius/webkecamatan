@@ -21,7 +21,7 @@ class ProfilController extends Controller
                 'judul' => $request->judul, 
                 'isi' => $request->isi,
             ]);
-        return redirect('profil/index');
+        return redirect('profil/index')->with('success', 'Berhasil Menambah Data!');
     }
 
     public function edit(Tentang $profil){
@@ -33,10 +33,10 @@ class ProfilController extends Controller
             'judul' => $request->judul,
             'isi' => $request->isi,
             ]);
-        return redirect('profil/index');
+        return redirect('profil/index')->with('update', 'Berhasil Mengubah Data!');
     }
     public function destroy(Request $request, Tentang $profil){
             $profil::destroy($profil->id);
-        return redirect('profil/index');
+        return redirect('profil/index')->with('delete', 'Berhasil Menghapus Data!');
     }
 }

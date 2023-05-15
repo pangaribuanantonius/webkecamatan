@@ -41,7 +41,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Login</h1>
                                     </div>
-                                    <form method="post" action="{{ route('login.postlogin') }}" class="user" enctype="multipart/form-data">
+                                    <form method="post" action="#" class="user" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
                                             <input type="text" name="username" class="form-control form-control-user" placeholder="Masukkan Username...">
@@ -56,7 +56,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" name="simpan" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>
                                     </form>

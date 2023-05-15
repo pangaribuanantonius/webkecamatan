@@ -10,6 +10,10 @@
 			@method('PATCH')
 			<input type="hidden" name="id">
 			<div class="form-group">
+				<label>Kategori</label>
+				<input type="text" name="kategori" value="{{ $strukturorganisasi->kategori }}" class="form-control" readonly>
+			</div>
+			<div class="form-group">
 				<label>Isi/Keterangan</label>
 				<textarea id="konten" name="isi" style="height: 100px;" class="form-control">{{ $strukturorganisasi->isi }}</textarea>
 			</div>

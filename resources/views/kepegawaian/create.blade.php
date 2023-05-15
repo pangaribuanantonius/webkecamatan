@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('admin') 
 @section('content')
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
@@ -10,7 +10,7 @@
 			@method('POST')
 			<div class="form-group">
 				<label>NIP</label>
-				<input type="text" name="nip" class="form-control">
+				<input type="text" name="nip" class="form-control" onkeypress="return Angkasaja(event)"/>
 			</div>
 
 			<div class="form-group">
@@ -37,4 +37,13 @@
 		</form>
 	</div>
 </div>
+
+<script type="text/javascript">
+	function Angkasaja(evt) {
+		var charCode = (evt.which) ? evt.which : event.keyCode
+		if (charCode > 31 && (charCode < 48 || charCode > 57))
+			return false;
+		return true;
+	}
+</script>
 @endsection

@@ -13,6 +13,11 @@
 				<input type="text" name="nama" class="form-control">
 			</div>
 
+			<div class="form-group">
+				<label>Kepala Desa/Lurah</label>
+				<input type="text" name="kepala" class="form-control">
+			</div>
+
 			<button class="btn btn-success btn-icon-split">
 				<span class="icon text-white-50">
 					<i class="fas fa-check"></i>

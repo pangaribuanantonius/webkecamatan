@@ -1,5 +1,12 @@
 @extends('admin')
 @section('content')
+
+@if(session()->has('update'))
+<div class="alert alert-success" role="alert">
+  {{ session('update') }}
+</div>
+@endif
+
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
 	<h1 class="h3 mb-0 text-gray-800">Struktur Organisasi</h1>
@@ -25,7 +32,7 @@
 				<tbody>
 					@foreach($strukturorganisasi as $struktur)
 					<tr>
-						<td>{!! nl2br($struktur->isi) !!}</td>
+						<td>{!! nl2br($struktur->kategori) !!}</td>
 						<td class="text-center">
 							<a href="{{ route('strukturorganisasi.edit', $struktur->id) }}"><i class="fas fa-edit"></i></a>
 						</td>

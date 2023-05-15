@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html> 
   <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -11,14 +11,22 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" type="text/css" href="asset/fontawesome-free-6.3.0-web/css/all.min.css">
 
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
+    <!-- data aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
     <title>Membuat template website</title>
   </head>
   <body>
+
+
     <section>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark text-white fixed-top" style="background: rgb(10,10,10);
+background: linear-gradient(180deg, rgba(10,10,10,0.8211659663865546) 100%, rgba(255,255,255,0) 100%);">
       <div class="container">
-        <a class="navbar-brand" href="./"><h1>Navbar</h1></a>
+        <a class="navbar-brand" href="{{ route('index') }}"><img src="{{ URL::asset('/konten/logo/logo.png') }}" style="width:50px;"><small>{{$settings->nama}}</small></a> 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,8 +41,8 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="{{ route('tentang') }}">Tentang</a></li>
-                <li><a class="dropdown-item" href="visimisi">Visi dan Misi</a></li>
-                <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
+                <li><a class="dropdown-item" href="{{ route('visimisi') }}">Visi dan Misi</a></li>
+                <li><a class="dropdown-item" href="{{ route('strukturorganisasi') }}">Struktur Organisasi</a></li>
               </ul> 
             </li>
             <li class="nav-item dropdown">
@@ -52,22 +60,30 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="#">Portal Deli Serdang</a></li>
+                <li><a class="dropdown-item" href="#">PPID</a></li>
               </ul>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('alamat') }}">Kontak Kami</a>
+            </li>
           </ul>
-            <a class="nav-link text-dark" href="#">
-                <strong>Login</strong>
-            </a>
+          <div class="d-flex mt-2">
+            <h5><a class="text-white" href="{{$settings->fb}}"><i class="fa-brands fa-facebook"></i></a></h5>&nbsp;&nbsp;&nbsp;&nbsp;
+            <h5><a class="text-white" href="{{$settings->ig}}"><i class="fa-brands fa-instagram"></i></a></h5>&nbsp;&nbsp;&nbsp;&nbsp;
+            <h5><a class="text-white" href="{{$settings->yt}}"><i class="fa-brands fa-youtube"></i></a></h5>
+          </div>
         </div>
       </div>
     </nav>
-    </section>
+    </section> 
 
+    <div data-aos="fade-up">
     @yield('layout')
+    </div>
 
-    <section class="bg-dark text-white">
+    <section class="bg-dark text-white mt-5">
       <div class="container">
-        <div class="row text-white">
+        <!--<div class="row text-white">
            <div class="col-md-3">
              <p>
                <h2>
@@ -91,28 +107,34 @@
            <p>
              <h4>Profil</h4>
              <br>
-             <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Sejarah
+             <a class="text-light" style="text-decoration:none;" href="{{ route('tentang') }}">
+               <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Tentang
+             </a>
              <br><br>
-             <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Letak Geografis
+             <a class="text-light" style="text-decoration:none;" href="#">
+               <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Visi dan Misi
+             </a>
              <br><br>
-             <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Batas Wilayah
+             <a class="text-light" style="text-decoration:none;" href="#">
+               <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Struktur Organisasi
+             </a>
              <br><br>
-             <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Struktur Organisasi
-             <br><br>
-             <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Potensi
+             <a class="text-light" style="text-decoration:none;" href="#">
+               <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Potensi Kecamatan
+             </a>
            </p>
           </div>
           <div class="col-md-2">
             <p>
-             <h4>Tautan</h4>
+             <h4>Pemerintahan</h4>
              <br>
-             <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Tautan 1
+             <a class="text-light" style="text-decoration:none;" href="{{ route('kepegawaian') }}">
+               <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Kepegawaian
+             </a>
              <br><br>
-             <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Tautan 2
-             <br><br>
-             <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Tautan 3
-             <br><br>
-             <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Tautan 4
+             <a class="text-light" style="text-decoration:none;" href="{{ route('desa') }}">
+               <i class="fa-solid fa-angle-right">&nbsp;&nbsp;</i>Desa
+             </a>
            </p>
           </div>
           <div class="col-md-5" align="center">
@@ -121,14 +143,16 @@
              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.1194531755973!2d98.86853691414554!3d3.5599536514840713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031496a5019990f%3A0xf6fd7a86540fde97!2sKANTOR%20DINAS%20KOMINFO%20(Komunikasi%20Dan%20Informatika)!5e0!3m2!1sid!2sid!4v1678071831150!5m2!1sid!2sid" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
            </p>
           </div>
-        </div>
+        </div>-->
       </div>
       <hr>
       <center>
-        © Copyright Dinas Kominfostan Deli Serdang. All Rights Reserved
+       Copyrights © 2023 All Rights Reserved<br>{{$settings->nama}}<br>Kabupaten Deli Serdang
       </center>
       <br>
     </section>
+
+
 
    <!-- Optional JavaScript; choose one of the two! -->
 
@@ -142,5 +166,11 @@
 
    <!-- font awesome -->
    <!-- <script type="text/javascript" src="asset/fontawesome-free-6.3.0-web/js/all.min.js"></script> -->
+
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+    AOS.init();
+   </script>
+
   </body>
   </html>

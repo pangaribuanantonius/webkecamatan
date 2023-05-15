@@ -16,6 +16,8 @@
     <link href="{{ asset('asset/test/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="{{ asset('asset/test/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- datatable -->
    <!--  <link rel="stylesheet" type="text/css" href="{{ asset('asset/datatable/datatables.min.css') }}"> -->
@@ -38,7 +40,7 @@
                 </div>
                 </p>
                 <p>
-                <div class="sidebar-brand-text mx-3">Administrator</div>
+                <div class="sidebar-brand-text mx-3">Administrator Kecamatan</div>
                 </p>
             </a>
 
@@ -126,8 +128,9 @@
                 </a>
                 <div id="postdrop" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Profil</h6>
+                        <h6 class="collapse-header">Post</h6>
                         <a class="collapse-item" href="{{ route('kegiatan.index') }}">Kegiatan</a>
+                        <a class="collapse-item" href="{{ route('slider.index') }}">Carosel</a>
                     </div>
                 </div>
             </li>
@@ -321,7 +324,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrator</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ session('username')}}</span>
                                 <img class="img-profile rounded-circle"
                                     src="{{ asset('asset/test/img/undraw_profile.svg') }}">
 
@@ -329,7 +332,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{route('settings.index')}}">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
                                 </a>
@@ -381,15 +384,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Peringatan !</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Apakah yakin ingin keluar ?</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{ route('login.logout') }}">Logout</a>
+                    <a class="btn btn-primary" href="{{ route('logout') }}">Logout</a>
                 </div>
             </div>
         </div>
@@ -423,7 +426,7 @@
     <!-- <script type="text/javascript" src="{{ asset('asset/datatable/datatables.min.js') }}"></script> -->
 
     <!-- ckeditor -->
-    <script src="{{asset('asset/ckeditor/ckeditor.js')}}"></script>
+    <!-- <script src="{{asset('asset/ckeditor/ckeditor.js')}}"></script> -->
 
     <script>
        var konten = document.getElementById("konten");
@@ -432,6 +435,20 @@
      });
        CKEDITOR.config.allowedContent = true;
    </script>
+
+   <!-- <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="crossorigin="anonymous"></script> -->
+
+    <!-- <script type="text/javascript">
+        const flashdata = $('.flash-data').data('flashdata');
+        console.log(flashdata);
+        if (flashdata) {
+            Swal.fire(
+                title: 'Pemberitahuan',
+                text: flashdata,
+                icon: 'success'
+                )
+        }
+    </script> -->
 
 
 </body>

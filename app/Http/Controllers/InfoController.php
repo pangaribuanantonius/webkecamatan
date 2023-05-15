@@ -20,7 +20,7 @@ class InfoController extends Controller
         \App\Models\Info::create([
                 'isi' => $request->isi,
             ]);
-        return redirect('info/index');
+        return redirect('info/index')->with('success', 'Berhasil Menambah Data!');
     }
 
      public function edit(Info $info){
@@ -31,12 +31,14 @@ class InfoController extends Controller
         $info->update([
             'isi' => $request->isi,
             ]);
-        return redirect('info/index');
+        /*return redirect('info/index')->with(['flashdata' => 'Berhasil']);*/
+        return redirect('info/index')->with('update', 'Berhasil Mengubah Data!');
     }
 
     public function destroy(Request $request, Info $info){
             $info::destroy($info->id);
-        return redirect('info/index');
+        /*return redirect('info/index')->with(['flashdata' => 'Berhasil']);*/
+        return redirect('info/index')->with('delete', 'Berhasil Menghapus Data!');
     }
 
 }

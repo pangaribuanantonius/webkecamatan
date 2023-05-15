@@ -29,23 +29,52 @@
 				<img src="{{ \URL::to('').'/konten/foto_berita/'. $kegiatan->foto_berita}}" width="100">
 			</div>
 
+			@error('foto_berita')
+			<span class="text-danger">{{ $message }}</span> <br><br>
+			@enderror
+
 			<button class="btn btn-success btn-icon-split" type="submit">
 				<span class="icon text-white-50">
 					<i class="fas fa-check"></i>
 				</span>
 				<span class="text">Simpan</span>
 			</button>
-		</form>
-		<form method="post" action="{{ route('kegiatan.delete', ['kegiatan'=>$kegiatan]) }}" enctype="multipart/form-data">
-			@csrf
-			@method('DELETE')
-			<button type="submit" class="btn btn-danger btn-icon-split">
-				<span class="icon text-white-50">
-					<i class="fas fa-trash"></i>
-				</span>
-				<span class="text">Hapus</span>
-			</button>
+			<a href="#" data-toggle="modal" data-target="#hapusModal" style="text-decoration:none">
+				<button class="btn btn-danger btn-icon-split">
+					<span class="icon text-white-50">
+						<i class="fas fa-trash"></i>
+					</span>
+					<span class="text">Hapus</span>
+				</button>
+			</a>
 		</form>
 	</div>
 </div>
+
+<!-- Hapus Modal-->
+    <div class="modal fade" id="hapusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Peringatan !</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Apakah yakin ingin Hapus ?</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <form method="post" action="{{ route('kegiatan.delete', ['kegiatan'=>$kegiatan]) }}" enctype="multipart/form-data">
+                    	@csrf
+                    	@method('DELETE')
+                    	<button type="submit" class="btn btn-danger btn-icon-split">
+                    		<span class="text">Hapus</span>
+                    	</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class LoginController extends Controller
 {
     public function login(){
@@ -13,16 +14,21 @@ class LoginController extends Controller
 
      public function postlogin(Request $request){
 
-     $dataLogin = [
-        'username' => $request->username,
-        'password' => $request->password
-    ];
-    if (\Auth::attempt($dataLogin)) {
+    $login = [
+            'username' => $request->username,
+            'password' => $request->password
+        ];
+    if (\Auth::attempt($login)) {
         session(['username' => $request->username]);
-        return redirect('/info/index');
+        $user = \App\Models\Users::where('username', session()->get('username'))->first();
+        if ($user->level == 'Super Admin') {
+            return redirect('/user/index');
+        }else{
+            return redirect('/info/index');
+        }
         
     }else{
-        dd('gagal');
+        return redirect('/login/login?pesan=username atau password salah');
     }
 
 

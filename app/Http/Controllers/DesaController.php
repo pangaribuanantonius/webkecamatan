@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 class DesaController extends Controller
 {
     public function desa(){
+        $settings = \App\Models\Settings::first();
         $desa = \App\Models\Desa::all();
-        return view('desa', ['desa' => $desa]);
+        return view('desa', ['settings' => $settings, 'desa' => $desa]);
     }
 
     public function index(){
@@ -24,8 +25,9 @@ class DesaController extends Controller
     public function store(Request $request){
         \App\Models\Desa::create([
                 'nama' => $request->nama,
+                'kepala' => $request->kepala,
             ]);
-        return redirect('desa/index');
+        return redirect('desa/index')->with('success', 'Berhasil Menambah Data!');
     }
 
     public function edit(Desa $desa){
@@ -35,12 +37,13 @@ class DesaController extends Controller
     public function update(Request $request, Desa $desa){
         $desa->update([
             'nama' => $request->nama,
+            'kepala' => $request->kepala,
             ]);
-        return redirect('desa/index');
+        return redirect('desa/index')->with('update', 'Berhasil Mengubah Data!');
     }
 
     public function destroy(Request $request, Desa $desa){
             $desa::destroy($desa->id);
-        return redirect('desa/index');
+        return redirect('desa/index')->with('delete', 'Berhasil Menghapus Data!');
     }
 }

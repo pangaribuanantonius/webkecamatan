@@ -26,6 +26,9 @@
 				<br>
 				<input type="file" name="foto_berita" required="required">
 			</div>
+			@error('foto_berita')
+			<span class="text-danger">{{ $message }}</span> <br><br>
+			@enderror
 
 			<button class="btn btn-success btn-icon-split">
 				<span class="icon text-white-50">

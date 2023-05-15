@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class BeritaAllController extends Controller
 {
     public function beritaall(){
+        $carbon = new \Carbon\Carbon;
+        $settings = \App\Models\Settings::first();
         $beritaall = \App\Models\Berita::all();
-        return view('beritaall', ['beritaall' => $beritaall]);
+        return view('beritaall', ['settings' => $settings, 'beritaall' => $beritaall, 'carbon' => $carbon]);
     }
 }

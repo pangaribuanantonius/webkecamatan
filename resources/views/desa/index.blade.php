@@ -1,5 +1,20 @@
 @extends('admin')
 @section('content')
+
+@if(session()->has('success'))
+<div class="alert alert-success" role="alert">
+  {{ session('success') }}
+</div>
+@elseif(session()->has('update'))
+<div class="alert alert-success" role="alert">
+  {{ session('update') }}
+</div>
+@elseif(session()->has('delete'))
+<div class="alert alert-success" role="alert">
+  {{ session('delete') }}
+</div>
+@endif
+
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
 	<h1 class="h3 mb-0 text-gray-800">Info</h1>
@@ -19,6 +34,7 @@
 				<thead>
 					<tr>
 						<th>Nama Desa</th>
+						<th>Kepala Desa/Lurah</th>
 						<th>Aksi</th>
 					</tr>
 				</thead>
@@ -26,6 +42,7 @@
 					@foreach($desa as $des)
 					<tr>
 						<td>{{$des->nama}}</td>
+						<td>{{$des->kepala}}</td>
 						<td class="text-center">
 							<a href="{{ route('desa.edit', $des->id) }}"><i class="fas fa-edit"></i></a>
 						</td>

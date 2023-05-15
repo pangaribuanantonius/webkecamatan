@@ -212,4 +212,7 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    'timezone' => 'Asia/Jakarta',
+    'locale' => 'id'
+
 ];

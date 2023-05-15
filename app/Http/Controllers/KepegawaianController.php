@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 class KepegawaianController extends Controller
 {
     public function kepegawaian(){
+        $settings  = \App\Models\Settings::first();
         $kepegawaian = \App\Models\Kepegawaian::all(); //menampilkan semua kegiatan
-        return view('kepegawaian', ['kepegawaian' => $kepegawaian]); //return kegiatan yang diseleksi
+        return view('kepegawaian', ['settings' => $settings,'kepegawaian' => $kepegawaian]); //return kegiatan yang diseleksi
     }
 
     public function index(){
@@ -28,7 +29,7 @@ class KepegawaianController extends Controller
                 'golongan' => $request->golongan,
                 'jabatan' => $request->jabatan,
             ]);
-        return redirect('kepegawaian/index');
+        return redirect('kepegawaian/index')->with('success', 'Berhasil Menambah Data!');
     }
 
     public function edit(Kepegawaian $kepegawaian){
@@ -42,11 +43,11 @@ class KepegawaianController extends Controller
             'golongan' => $request->golongan,
             'jabatan' => $request->jabatan,
             ]);
-        return redirect('kepegawaian/index');
+        return redirect('kepegawaian/index')->with('update', 'Berhasil Mengubah Data!');
     }
 
     public function destroy(Request $request, Kepegawaian $kepegawaian){
             $kepegawaian::destroy($kepegawaian->id);
-        return redirect('kepegawaian/index');
+        return redirect('kepegawaian/index')->with('delete', 'Berhasil Menghapus Data!');
     }
 }

@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class StrukturorganisasiController extends Controller
 {
+
+    public function strukturorganisasi(){
+        $settings = \App\Models\Settings::first();
+        $strukturorganisasi = \App\Models\Strukturorganisasi::all();
+        return view('strukturorganisasi', ['settings' => $settings, 'strukturorganisasi' => $strukturorganisasi]);
+    }
+
     public function index(){
         $strukturorganisasi = \App\Models\Strukturorganisasi::all();
         return view('strukturorganisasi.index', ['strukturorganisasi' => $strukturorganisasi]);
@@ -39,6 +46,6 @@ class StrukturorganisasiController extends Controller
             'isi' => $request->isi,
             ]);
         }
-        return redirect('strukturorganisasi/index');        
+        return redirect('strukturorganisasi/index')->with('update', 'Berhasil Mengubah Data!');        
     }
 }

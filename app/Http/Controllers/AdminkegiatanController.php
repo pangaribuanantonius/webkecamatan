@@ -37,7 +37,7 @@ class AdminkegiatanController extends Controller
                 'isi_berita' => $request->isi_berita,
             ]);
         }
-        return redirect('kegiatan/index');
+        return redirect('kegiatan/index')->with('success', 'Berhasil Menambah Data!');
     }
 
     public function edit(Berita $kegiatan){
@@ -69,7 +69,7 @@ class AdminkegiatanController extends Controller
             'isi_berita' => $request->isi_berita,
             ]);
         }
-        return redirect('kegiatan/index');        
+        return redirect('kegiatan/index')->with('update', 'Berhasil Mengubah Data!');        
     }
 
     public function destroy(Request $request, Berita $kegiatan){
@@ -81,7 +81,7 @@ class AdminkegiatanController extends Controller
             unlink('konten/foto_berita/'.$kegiatan->foto_berita);
         }
         
-        return redirect('kegiatan/index');
+        return redirect('kegiatan/index')->with('delete', 'Berhasil Menghapus Data!');
 
     }
 
