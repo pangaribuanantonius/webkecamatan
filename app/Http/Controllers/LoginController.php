@@ -24,7 +24,7 @@ class LoginController extends Controller
         if ($user->level == 'Super Admin') {
             return redirect('/user/index');
         }else{
-            return redirect('/info/index');
+            return redirect('/profil/index');
         }
         
     }else{

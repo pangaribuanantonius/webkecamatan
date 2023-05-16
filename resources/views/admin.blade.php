@@ -58,19 +58,19 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            <!-- <div class="sidebar-heading">
                 Interface
-            </div>
+            </div> -->
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="{{ route('info.index') }}">
                     <i class="fas fa-fw fa-comment"></i>
                     <span>Info</span></a>
-            </li>
+            </li> -->
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <!-- <hr class="sidebar-divider"> -->
 
             <!-- Heading -->
             <div class="sidebar-heading">
@@ -130,6 +130,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Post</h6>
                         <a class="collapse-item" href="{{ route('kegiatan.index') }}">Kegiatan</a>
+                        <a class="collapse-item" href="{{ route('info.index') }}">Info</a>
                         <a class="collapse-item" href="{{ route('slider.index') }}">Carosel</a>
                     </div>
                 </div>
