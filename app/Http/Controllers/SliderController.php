@@ -42,4 +42,44 @@ class SliderController extends Controller
         return view('slider.edit', ['slider' => $slider]);
     }
 
+    public function update(Request $request, Slider $slider){
+        $datasudahvalidasi = $request->validate([
+            'judul' => 'required',
+            'foto_halaman' => 'file|mimes:jpg,png,jpeg|max:1024',
+        ]);
+        
+
+        if ($request->hasFile('foto_halaman')) {
+            if ($slider->foto_halaman!=='kosong.png') {
+                unlink('konten/slider/'.$slider->foto_halaman);
+            }
+            
+            $extFile = $request->foto_halaman->getClientOriginalExtension();
+            $namaFile = time().".".$extFile;
+            $request->foto_halaman->move('konten/slider', $namaFile);
+            $slider->update([
+            'judul' => $request->judul,
+            'foto_halaman' => $namaFile,
+            ]);
+        }else{
+            $slider->update([
+            'judul' => $request->judul,
+            ]);
+        }
+        return redirect('slider/index')->with('update', 'Berhasil Mengubah Data!');        
+    }
+
+    public function destroy(Request $request, Slider $slider){
+        if (!$slider->foto_halaman == 'kosong.png') {
+            $slider::destroy($slider->id);
+            unlink('konten/slider/'.$slider->foto_halaman);
+        }else{
+            $slider::destroy($slider->id);
+            unlink('konten/slider/'.$slider->foto_halaman);
+        }
+        
+        return redirect('slider/index')->with('delete', 'Berhasil Menghapus Data!');
+
+    }
+
 }

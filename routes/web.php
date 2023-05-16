@@ -125,6 +125,8 @@ Route::get('/slider/index', [SliderController::class, 'index'])->name('slider.in
 Route::get('/slider/create', [SliderController::class, 'create'])->name('slider.create');
 Route::post('/slider/store', [SliderController::class, 'store'])->name('slider.store');
 Route::get('/slider/{slider}/edit', [SliderController::class, 'edit'])->name('slider.edit');
+Route::patch('/slider/{slider}/edit', [SliderController::class, 'update'])->name('slider.edit');
+Route::delete('/slider/{slider}/delete', [SliderController::class, 'destroy'])->name('slider.delete');
 
 //login
 Route::get('/login/login', [LoginController::class, 'login'])->name('login.login');
