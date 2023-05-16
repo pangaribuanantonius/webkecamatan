@@ -44,7 +44,7 @@
 					<tr>
 						<td>{{$slide->judul}}</td>
 						<td class="text-center">
-							<a href="#"><i class="fas fa-edit"></i></a>
+							<a href="{{route('slider.edit', $slide->id)}}"><i class="fas fa-edit"></i></a>
 						</td>
 					</tr>
 					@endforeach

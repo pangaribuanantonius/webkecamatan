@@ -47,7 +47,7 @@
       @foreach($berita as $news)
       <div class="col-md-6 col-lg-4">
         <div class="card border-2 shadow rouded">
-          <a class="nav-link text-dark" href="#">
+          <a class="nav-link text-dark" href="{{route('berita-detail', $news->id )}}">
             <img src="{{ \URL::to('').'/konten/foto_berita/'. $news->foto_berita}}" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text" align="justify">

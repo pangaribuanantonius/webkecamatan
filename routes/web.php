@@ -62,6 +62,7 @@ use App\Http\Controllers\SettingsController;
 
 Route::get('/', [BeritaController::class, 'index'])->name('index');
 Route::get('/index', [BeritaController::class, 'index'])->name('index');
+Route::get('/{id}', [BeritaController::class, 'show'])->name('berita-detail');
 Route::get('/tentang', [TentangController::class, 'tentang'])->name('tentang');
 Route::get('/visimisi', [VisimisiController::class, 'visimisi'])->name('visimisi');
 Route::get('/strukturorganisasi', [StrukturorganisasiController::class, 'strukturorganisasi'])->name('strukturorganisasi');
@@ -123,6 +124,7 @@ Route::patch('/settings/{settings}/edit', [SettingsController::class, 'update'])
 Route::get('/slider/index', [SliderController::class, 'index'])->name('slider.index');
 Route::get('/slider/create', [SliderController::class, 'create'])->name('slider.create');
 Route::post('/slider/store', [SliderController::class, 'store'])->name('slider.store');
+Route::get('/slider/{slider}/edit', [SliderController::class, 'edit'])->name('slider.edit');
 
 //login
 Route::get('/login/login', [LoginController::class, 'login'])->name('login.login');

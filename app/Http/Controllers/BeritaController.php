@@ -22,5 +22,11 @@ class BeritaController extends Controller
         $video = \App\Models\Video::limit(6)->get();
         return view('index', ['settings' => $settings, 'slider' => $slider, 'marquee' => $marquee, 'berita' => $berita, 'foto' => $foto, 'video' => $video, 'carbon' => $carbon]);
     }
-    
+
+    public function show($id){
+        $settings = \App\Models\Settings::first();
+        $berita = Berita::Where('id', $id)->first();
+        $carbon = new \Carbon\Carbon;
+        return view('berita-detail', ['settings' => $settings, 'berita' => $berita, 'carbon' => $carbon]);
+    }
 }

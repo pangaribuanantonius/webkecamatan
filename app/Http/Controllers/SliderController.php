@@ -38,4 +38,8 @@ class SliderController extends Controller
         return redirect('slider/index')->with('success', 'Berhasil Menambah Data!');
     }
 
+    public function edit(Slider $slider){
+        return view('slider.edit', ['slider' => $slider]);
+    }
+
 }
