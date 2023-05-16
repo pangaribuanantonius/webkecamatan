@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Login Kecamatan</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('asset/test/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -23,6 +23,7 @@
 </head>
 
 <body class="bg-gradient-primary">
+    <br><br>
 
     <div class="container">
 
