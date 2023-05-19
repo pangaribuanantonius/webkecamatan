@@ -23,9 +23,9 @@ class BeritaController extends Controller
         return view('index', ['settings' => $settings, 'slider' => $slider, 'marquee' => $marquee, 'berita' => $berita, 'foto' => $foto, 'video' => $video, 'carbon' => $carbon]);
     }
 
-    public function show($id){
+    public function show($judul_berita){
         $settings = \App\Models\Settings::first();
-        $berita = Berita::Where('id', $id)->first();
+        $berita = Berita::Where('judul_berita', $judul_berita)->first();
         $carbon = new \Carbon\Carbon;
         return view('berita-detail', ['settings' => $settings, 'berita' => $berita, 'carbon' => $carbon]);
     }

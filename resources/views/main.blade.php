@@ -23,8 +23,9 @@
 
 
     <section>
-      <nav class="navbar navbar-expand-lg navbar-dark text-white fixed-top" style="background: rgb(10,10,10);
-background: linear-gradient(180deg, rgba(10,10,10,0.8211659663865546) 100%, rgba(255,255,255,0) 100%);">
+      <!-- <nav class="navbar navbar-expand-lg navbar-dark text-white fixed-top" style="background: rgb(10,10,10);
+background: linear-gradient(180deg, rgba(10,10,10,0.8211659663865546) 100%, rgba(255,255,255,0) 100%);"> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white fixed-top">
       <div class="container">
         <a class="navbar-brand" href="{{ route('index') }}"><img src="{{ URL::asset('/konten/logo/logo.png') }}" style="width:50px;"><small>{{$settings->nama}}</small></a> 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,8 +60,8 @@ background: linear-gradient(180deg, rgba(10,10,10,0.8211659663865546) 100%, rgba
                 Layanan Terkait
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Portal Deli Serdang</a></li>
-                <li><a class="dropdown-item" href="#">PPID</a></li>
+                <li><a class="dropdown-item" href="https://portal.deliserdangkab.go.id">Portal Deli Serdang</a></li>
+                <li><a class="dropdown-item" href="https://ppid.deliserdangkab.go.id">PPID</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -75,7 +76,7 @@ background: linear-gradient(180deg, rgba(10,10,10,0.8211659663865546) 100%, rgba
         </div>
       </div>
     </nav>
-    </section> 
+    </section>
 
     <div data-aos="fade-up">
     @yield('layout')

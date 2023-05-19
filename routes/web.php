@@ -62,7 +62,6 @@ use App\Http\Controllers\SettingsController;
 
 Route::get('/', [BeritaController::class, 'index'])->name('index');
 Route::get('/index', [BeritaController::class, 'index'])->name('index');
-Route::get('/{id}', [BeritaController::class, 'show'])->name('berita-detail');
 Route::get('/tentang', [TentangController::class, 'tentang'])->name('tentang');
 Route::get('/visimisi', [VisimisiController::class, 'visimisi'])->name('visimisi');
 Route::get('/strukturorganisasi', [StrukturorganisasiController::class, 'strukturorganisasi'])->name('strukturorganisasi');
@@ -71,6 +70,7 @@ Route::get('/kepegawaian', [KepegawaianController::class, 'kepegawaian'])->name(
 Route::get('/desa', [DesaController::class, 'desa'])->name('desa');
 Route::get('/beritaall', [BeritaAllController::class, 'beritaall'])->name('beritaall');
 Route::get('/videoall', [VideoAllController::class, 'videoall'])->name('videoall');
+Route::get('/{id}', [BeritaController::class, 'show'])->name('berita-detail');
 
 
 //admin

@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('layout')
-
+<br><br><br>
 <section>
   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <!--   <div class="carousel-indicators">
@@ -31,7 +31,7 @@
   </div>
 </section>
 
-
+ 
 <marquee class="bg-dark text-white">
     @foreach($marquee as $info)
     "{{$info->isi}}"  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -47,7 +47,7 @@
       @foreach($berita as $news)
       <div class="col-md-6 col-lg-4">
         <div class="card border-2 shadow rouded">
-          <a class="nav-link text-dark" href="{{route('berita-detail', $news->id )}}">
+          <a class="nav-link text-dark" href="{{route('berita-detail', $news->judul_berita )}}">
             <img src="{{ \URL::to('').'/konten/foto_berita/'. $news->foto_berita}}" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text" align="justify">
