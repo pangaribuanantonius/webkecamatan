@@ -1,4 +1,4 @@
-<br><br><br><br><br>
+<br><br><br><br>
 @extends('main')
 @section('layout')
 <section>
@@ -22,6 +22,7 @@
       </div>
       @endforeach
     </div>
+    {{$beritaall->appends(Request::except('page'))->links()}}
   </div>
 </section><br><br>
 @endsection
