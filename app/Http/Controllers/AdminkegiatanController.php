@@ -19,7 +19,7 @@ class AdminkegiatanController extends Controller
     public function store(Request $request){
         $datasudahvalidasi = $request->validate([
             'isi_berita' => 'required',
-            'foto_berita' => 'file|mimes:jpg,png,jpeg|max:1024',
+            'foto_berita' => 'file|mimes:jpg,png,jpeg|max:2048',
         ]);
         if ($request->hasFile('foto_berita')) {
             $extFile = $request->foto_berita->getClientOriginalExtension();
@@ -46,7 +46,7 @@ class AdminkegiatanController extends Controller
 
      public function update(Request $request, Berita $kegiatan){
         $datasudahvalidasi = $request->validate([
-            'foto_berita' => 'file|mimes:jpg,png,jpeg|max:1024',
+            'foto_berita' => 'file|mimes:jpg,png,jpeg|max:2048',
         ]);
         
 

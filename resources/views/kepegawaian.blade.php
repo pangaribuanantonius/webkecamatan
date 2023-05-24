@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-9" align="justify">
-            <h2>Kepegawaian</h2><hr>
+            <h2>Pejabat</h2><hr>
             <table class="table table-striped table-bordered " bordered="1" width="100%" cellspacing="0" cellpadding="1"> 
                 <thead>
                   <!-- <tr class="text-center">

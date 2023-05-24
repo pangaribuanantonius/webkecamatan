@@ -2,7 +2,7 @@
 @extends('main')
 @section('layout')
     <section>
-      <div class="container-fluid">
+      <div class="container">
         <div class="row">
           <div class="col-lg-9" align="justify">
             <p>
@@ -29,7 +29,7 @@
               </table>
             </p>
           </div>
-          <div class="col-lg-3 mt-2">
+          <!-- <div class="col-lg-3 mt-2">
            <p>
               <h4>Profil</h4>
               <a class="navbar-brand" href="#">Tentang</a><br>
@@ -50,7 +50,7 @@
               <a class="navbar-brand" href="#">Portal Deli Serdang</a><br>
               <a class="navbar-brand" href="#">PPID</a><br>
            </p>
-          </div>
+          </div> -->
         </div>
       </div>
     </section><br><br>

@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
-    <title>Membuat template website</title>
+    <title>{{$settings->nama}}</title>
   </head>
   <body>
 
@@ -51,7 +51,7 @@ background: linear-gradient(180deg, rgba(10,10,10,0.8211659663865546) 100%, rgba
                 Pemerintahan
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="{{ route('kepegawaian') }}">Kepegawaian</a></li>
+                <li><a class="dropdown-item" href="{{ route('kepegawaian') }}">Pejabat</a></li>
                 <li><a class="dropdown-item" href="{{route('desa')}}">Desa/Kelurahan</a></li>
               </ul> 
             </li>
