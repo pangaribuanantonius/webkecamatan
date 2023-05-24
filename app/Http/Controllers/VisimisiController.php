@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class VisimisiController extends Controller
 {
     public function visimisi(){
-        $settings = \App\models\Settings::first();
+        $settings = \App\Models\Settings::first();
         $visimisi = \App\Models\Visimisi::all();
         return view('visimisi', ['settings' => $settings, 'visimisi' => $visimisi]);
     }
