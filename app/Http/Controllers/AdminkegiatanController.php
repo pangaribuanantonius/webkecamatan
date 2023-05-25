@@ -9,7 +9,8 @@ class AdminkegiatanController extends Controller
 {
      public function index(){
         $kegiatan = \App\Models\Berita::all(); //menampilkan semua kegiatan
-        return view('kegiatan.index', ['kegiatan' => $kegiatan]); //return kegiatan yang diseleksi
+        $carbon = new \Carbon\Carbon;
+        return view('kegiatan.index', ['kegiatan' => $kegiatan, 'carbon' => $carbon]); //return kegiatan yang diseleksi
     }
 
      public function create(){
