@@ -17,7 +17,7 @@ class BeritaController extends Controller
         $settings = \App\Models\Settings::first();
         $slider = \App\Models\Slider::All();
         $marquee = \App\Models\Info::all();
-        $berita = \App\Models\Berita::limit(6)->get();
+        $berita = \App\Models\Berita::orderBy('created_at', 'desc')->limit(6)->get();
         $foto = \App\Models\Foto::limit(6)->get();
         $video = \App\Models\Video::limit(6)->get();
         return view('index', ['settings' => $settings, 'slider' => $slider, 'marquee' => $marquee, 'berita' => $berita, 'foto' => $foto, 'video' => $video, 'carbon' => $carbon]);
