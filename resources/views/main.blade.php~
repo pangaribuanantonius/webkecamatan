@@ -61,6 +61,7 @@ background: linear-gradient(180deg, rgba(10,10,10,0.8211659663865546) 100%, rgba
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="https://portal.deliserdangkab.go.id">Portal Deli Serdang</a></li>
+                <li><a class="dropdown-item" href="https://ppid.deliserdangkab.go.id">PPID</a></li>
               </ul>
             </li>
 	    <li class="nav-item">

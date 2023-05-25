@@ -66,7 +66,7 @@
               <div class="card-header bg-info" style="border-radius:6px">
                 <p>
                   <br>
-                  <img class="card-img-top" src="{{ URL::asset('/konten/gambar/1680170716.jpg') }}" style="width: 120px; height: 120px;border-radius:100%;" alt="Card image cap">
+                  <img class="card-img-top" src="{{ URL::asset('/konten/gambar/download1.png') }}" style="width: 120px; height: 120px;border-radius:100%;" alt="Card image cap">
                 </p>
               </div>
               <div class="card-body">
