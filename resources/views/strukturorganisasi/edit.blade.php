@@ -18,7 +18,7 @@
 				<textarea id="konten" name="isi" style="height: 100px;" class="form-control">{{ $strukturorganisasi->isi }}</textarea>
 			</div>
 			<div class="form-group">
-				<input type="file" name="gambar">
+				<input type="file" id="file" name="gambar" accept="image/*">
 			</div>
 			<div class="form-group">
 				<img src="{{ \URL::to('').'/konten/gambar/'. $strukturorganisasi->gambar}}" width="100">
@@ -32,4 +32,36 @@
 		</form>
 	</div>
 </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.2.1/compressor.min.js"></script>
+	<script type="text/javascript">
+		document.getElementById('file').addEventListener('change', (e) => {
+			const file = e.target.files[0];
+
+			if (!file) {
+				return;
+			}
+
+			new Compressor(file, {
+				quality: 0.6, //turunkan kualitas 605
+
+				success(result){
+					console.log(result)
+					//tangkap lagi input type filenya
+					fileInput = document.getElementById('file');
+					// buat object datatransfer untuk memasuka file hasil compress ke input type file
+					let fileaku = new File([result], "gambar.jpg")
+					const dataTransfer = new DataTransfer();
+					dataTransfer.items.add(fileaku);
+					fileInput.files = dataTransfer.files;
+					console.log(fileaku)
+				},
+				error(err) {
+					console.log(err.message);
+				},
+			});
+
+		});
+	</script>
+
 @endsection
