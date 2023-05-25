@@ -427,7 +427,7 @@
     <!-- <script type="text/javascript" src="{{ asset('asset/datatable/datatables.min.js') }}"></script> -->
 
     <!-- ckeditor -->
-    <!-- <script src="{{asset('asset/ckeditor/ckeditor.js')}}"></script> -->
+    <script src="{{asset('asset/ckeditor/ckeditor.js')}}"></script>
 
     <script>
        var konten = document.getElementById("konten");

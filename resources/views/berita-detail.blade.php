@@ -9,7 +9,7 @@
         <h6>{{ $carbon->parse($berita->created_at)->isoFormat('D MMMM Y') }}</h6><hr>
         <p>
           <img src="{{ \URL::to('').'/konten/foto_berita/'. $berita->foto_berita}}" class="card-img-top" alt="...">
-          {!! nl2br(e($berita->isi_berita)) !!}
+          {!! ($berita->isi_berita) !!}
         </p>
       </div>
       <!-- <div class="col-lg-3 mt-2">
