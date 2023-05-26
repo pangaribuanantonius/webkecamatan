@@ -43,7 +43,8 @@ class AdminkegiatanController extends Controller
     }
 
     public function edit(Berita $kegiatan){
-        return view('kegiatan.edit', ['kegiatan' => $kegiatan]);
+        $berkas = \App\Models\Berkas::all();
+        return view('kegiatan.edit', ['kegiatan' => $kegiatan, 'berkas' => $berkas]);
     }
 
      public function update(Request $request, Berita $kegiatan){

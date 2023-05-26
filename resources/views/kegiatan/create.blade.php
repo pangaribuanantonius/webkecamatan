@@ -46,7 +46,7 @@
 
 	<div class="col-md-4">
 		@include('berkas.index')
-	</div>
+	</div> 
 	
 </div>
 

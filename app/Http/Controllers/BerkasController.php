@@ -13,7 +13,8 @@ class BerkasController extends Controller
     }
 
     public function create(){
-        return view('berkas.create');
+        $berkas = \App\Models\Berkas::all();
+        return view('berkas.create', ['berkas' => $berkas]);
     }
 
    public function store(Request $request){

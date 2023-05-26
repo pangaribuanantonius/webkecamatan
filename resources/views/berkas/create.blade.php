@@ -61,6 +61,31 @@
 				<span class="text">Upload</span>
 			</button>
 		</form>
+
+		<br><br>
+
+		<p>
+			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+				<thead>
+					<tr>
+						<th>File</th>
+						<th>Keterangan</th>
+						<th>Aksi</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach($berkas as $file) 
+					<tr>
+						<td><img src="{{ \URL::to('').'/konten/berkas/'. $file->berkas}}" width="100"> </td>
+						<td>{{ $file->keterangan }}</td>
+						<td class="text-center">
+							<a href="#"><i class="fas fa-edit"></i></a>
+						</td>
+					</tr>
+					@endforeach
+				</tbody>
+			</table>
+		</p>
 		
 
 	</div>

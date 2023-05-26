@@ -130,7 +130,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Post</h6>
                         <a class="collapse-item" href="{{ route('kegiatan.index') }}">Kegiatan</a>
-                        <a class="collapse-item" href="{{ route('info.index') }}">Info</a>
+                        <a class="collapse-item" href="{{ route('info.index') }}">Pengumuman</a>
                         <a class="collapse-item" href="{{ route('slider.index') }}">Carosel</a>
                         <a class="collapse-item" href="{{ route('berkas.create') }}">Berkas</a>
                     </div>
