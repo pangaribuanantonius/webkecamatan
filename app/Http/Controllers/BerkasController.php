@@ -34,7 +34,7 @@ class BerkasController extends Controller
                 'keterangan' => $request->keterangan,
             ]);
         }
-        return redirect('kegiatan/index');
+        return redirect('berkas/create')->with('success', 'Berhasil Menambah Data!');;
     }
 
 }

@@ -52,6 +52,9 @@
 				<img src="{{ \URL::to('').'/konten/berkas/'. $file->berkas}}" width="100"> 
 				<span>{{ $file->keterangan }}</span>
 			</p>
+			<p>
+				<input type="text" class="form-control" name="" value="http://localhost:81/webkecamatan/public/konten/berkas/{{ $file->berkas }}">
+			</p>
 			@endforeach
 
 	</div>
