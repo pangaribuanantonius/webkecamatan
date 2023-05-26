@@ -14,7 +14,8 @@ class AdminkegiatanController extends Controller
     }
 
      public function create(){
-        return view('kegiatan.create');
+        $berkas = \App\Models\Berkas::all();
+        return view('kegiatan.create',['berkas' => $berkas]);
     }
 
     public function store(Request $request){

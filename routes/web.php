@@ -17,6 +17,7 @@ use App\Http\Controllers\AdminkegiatanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\BerkasController;
 
 
 
@@ -127,6 +128,10 @@ Route::post('/slider/store', [SliderController::class, 'store'])->name('slider.s
 Route::get('/slider/{slider}/edit', [SliderController::class, 'edit'])->name('slider.edit')->middleware('login');
 Route::patch('/slider/{slider}/edit', [SliderController::class, 'update'])->name('slider.edit')->middleware('login');
 Route::delete('/slider/{slider}/delete', [SliderController::class, 'destroy'])->name('slider.delete')->middleware('login');
+
+Route::get('/berkas/index', [BerkasController::class, 'index'])->name('berkas.index')->middleware('login');
+Route::get('/berkas/create', [BerkasController::class, 'create'])->name('berkas.create')->middleware('login');
+Route::post('/berkas/store', [BerkasController::class, 'store'])->name('berkas.store')->middleware('login');
 
 //login
 Route::get('/login/login', [LoginController::class, 'login'])->name('login.login');

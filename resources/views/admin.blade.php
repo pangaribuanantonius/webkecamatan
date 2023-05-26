@@ -132,6 +132,7 @@
                         <a class="collapse-item" href="{{ route('kegiatan.index') }}">Kegiatan</a>
                         <a class="collapse-item" href="{{ route('info.index') }}">Info</a>
                         <a class="collapse-item" href="{{ route('slider.index') }}">Carosel</a>
+                        <a class="collapse-item" href="{{ route('berkas.create') }}">Berkas</a>
                     </div>
                 </div>
             </li>

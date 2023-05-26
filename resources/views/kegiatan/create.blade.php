@@ -45,42 +45,9 @@
 	</div>
 
 	<div class="col-md-4">
-		<div class="card shadow mb-4">
-			<div class="card-header py-3">
-				<h6 class="m-0 font-weight-bold text-primary">Form Berkas</h6>
-			</div>
-			<div class="card-body">
-				<form method="post" action="#" enctype="multipart/form-data">
-					@csrf
-					@method('POST')
-					<div class="form-group">
-						<label>Keterangan</label>
-						<input type="text" name="keterangan" class="form-control" required="required">
-					</div>
-
-					@error('keterangan')
-					<span class="text-danger">{{ $message }}</span> <br>
-					@enderror
-
-					<div class="form-group">
-						<label>Gambar</label>
-						<br>
-						<input type="file" id="file" name="foto_berita" accept="image/*" required="required">
-					</div>
-					@error('foto_berita')
-					<span class="text-danger">{{ $message }}</span> <br><br>
-					@enderror
-
-					<button class="btn btn-success btn-icon-split">
-						<span class="icon text-white-50">
-							<i class="fas fa-check"></i>
-						</span>
-						<span class="text">Upload</span>
-					</button>
-				</form>
-			</div>
-		</div>
+		@include('berkas.index')
 	</div>
+	
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.2.1/compressor.min.js"></script>
