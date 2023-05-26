@@ -79,7 +79,7 @@
 						<td><img src="{{ \URL::to('').'/konten/berkas/'. $file->berkas}}" width="100"> </td>
 						<td>{{ $file->keterangan }}</td>
 						<td class="text-center">
-							<a href="#"><i class="fas fa-edit"></i></a>
+							<a href="{{ route('berkas.edit', $file->id) }}"><i class="fas fa-edit"></i></a>
 						</td>
 					</tr>
 					@endforeach

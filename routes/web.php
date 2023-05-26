@@ -132,6 +132,9 @@ Route::delete('/slider/{slider}/delete', [SliderController::class, 'destroy'])->
 Route::get('/berkas/index', [BerkasController::class, 'index'])->name('berkas.index')->middleware('login');
 Route::get('/berkas/create', [BerkasController::class, 'create'])->name('berkas.create')->middleware('login');
 Route::post('/berkas/store', [BerkasController::class, 'store'])->name('berkas.store')->middleware('login');
+Route::get('/berkas/{berkas}/edit', [BerkasController::class, 'edit'])->name('berkas.edit')->middleware('login');
+Route::patch('/berkas/{berkas}/edit', [BerkasController::class, 'update'])->name('berkas.edit')->middleware('login');
+Route::delete('/berkas/{berkas}/delete', [BerkasController::class, 'destroy'])->name('berkas.delete')->middleware('login');
 
 //login
 Route::get('/login/login', [LoginController::class, 'login'])->name('login.login');

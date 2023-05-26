@@ -1,66 +1,51 @@
 @extends('admin')
 @section('content')
 
-<div class="row">
-	<div class="col-md-8">
-		<div class="card shadow mb-4">
-			<div class="card-header py-3">
-				<h6 class="m-0 font-weight-bold text-primary">Form Data</h6>
-			</div>
-			<div class="card-body">
-				<form method="post" action="{{ route('kegiatan.edit', ['kegiatan' => $kegiatan]) }}" enctype="multipart/form-data">
-					@csrf
-					@method('PATCH')
-					<input type="hidden" name="id">
-					<div class="form-group">
-						<label>Judul/Tema</label>
-						<input type="text" name="judul_berita" value="{{ $kegiatan->judul_berita }}" class="form-control">
-					</div>
-
-					<div class="form-group">
-						<label>Isi/Keterangan</label>
-						<textarea id="konten" name="isi_berita" style="height: 100px;" class="form-control">{{ $kegiatan->isi_berita }}</textarea>
-					</div>
-
-					<div class="form-group">
-						<label>Gambar</label>
-						<br>
-						<input type="file" id="file" name="foto_berita" accept="image/*">
-					</div>
-
-					<div class="form-group">
-						<img src="{{ \URL::to('').'/konten/foto_berita/'. $kegiatan->foto_berita}}" width="100">
-					</div>
-
-					@error('foto_berita')
-					<span class="text-danger">{{ $message }}</span> <br><br>
-					@enderror
-
-					<button class="btn btn-success btn-icon-split" type="submit">
-						<span class="icon text-white-50">
-							<i class="fas fa-check"></i>
-						</span>
-						<span class="text">Simpan</span>
-					</button>
-					<a href="#" data-toggle="modal" data-target="#hapusModal" style="text-decoration:none">
-						<button class="btn btn-danger btn-icon-split">
-							<span class="icon text-white-50">
-								<i class="fas fa-trash"></i>
-							</span>
-							<span class="text">Hapus</span>
-						</button>
-					</a>
-				</form>
-			</div>
-		</div>
+<div class="card shadow mb-4">
+	<div class="card-header py-3">
+		<h6 class="m-0 font-weight-bold text-primary">Form Data</h6>
 	</div>
+	<div class="card-body">
+		<form method="post" action="{{ route('berkas.edit', ['berkas' => $berkas]) }}" enctype="multipart/form-data">
+			@csrf
+			@method('PATCH')
+			<input type="hidden" name="id">
+			<div class="form-group">
+				<label>Keterangan</label>
+				<input type="text" name="keterangan" value="{{ $berkas->keterangan }}" class="form-control">
+			</div>
 
-	<div class="col-md-4">
-		@include('berkas.index')
+			<div class="form-group">
+				<label>Gambar</label>
+				<br>
+				<input type="file" id="file" name="berkas" accept="image/*">
+			</div>
+
+			<div class="form-group">
+				<img src="{{ \URL::to('').'/konten/berkas/'. $berkas->berkas}}" width="100">
+			</div>
+
+			@error('berkas')
+			<span class="text-danger">{{ $message }}</span> <br><br>
+			@enderror
+
+			<button class="btn btn-success btn-icon-split" type="submit">
+				<span class="icon text-white-50">
+					<i class="fas fa-check"></i>
+				</span>
+				<span class="text">Simpan</span>
+			</button>
+			<a href="#" data-toggle="modal" data-target="#hapusModal" style="text-decoration:none">
+				<button class="btn btn-danger btn-icon-split">
+					<span class="icon text-white-50">
+						<i class="fas fa-trash"></i>
+					</span>
+					<span class="text">Hapus</span>
+				</button>
+			</a>
+		</form>
 	</div>
-
 </div>
-
 
 <!-- Hapus Modal-->
     <div class="modal fade" id="hapusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -76,7 +61,7 @@
                 <div class="modal-body">Apakah yakin ingin Hapus ?</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <form method="post" action="{{ route('kegiatan.delete', ['kegiatan'=>$kegiatan]) }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('berkas.delete', ['berkas'=>$berkas]) }}" enctype="multipart/form-data">
                     	@csrf
                     	@method('DELETE')
                     	<button type="submit" class="btn btn-danger btn-icon-split">
