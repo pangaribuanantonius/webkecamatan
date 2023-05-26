@@ -16,6 +16,8 @@
 	</div>
 
 	<div class="card-body">
+		<input type="text" class="form-control" name="" id="cariKat" onkeyup="prosesMenu()" placeholder="Cari Disini...">
+<br>
 
 		<!-- <form method="post" action="{{ route('berkas.store') }}" enctype="multipart/form-data">
 			@csrf
@@ -56,6 +58,26 @@
 				<input type="text" class="form-control" name="" value="http://localhost:81/webkecamatan/public/konten/berkas/{{ $file->berkas }}">
 			</p>
 			@endforeach
+
+
+			<script type="text/javascript">
+	function prosesMenu()
+{
+	var input = document.getElementById("cariKat");
+	var filter = input.value.toLowerCase();
+	var ul = document.getElementById("daftarKategori");
+	var li = document.querySelectorAll("li")
+	console.log(li)
+	for(var i = 0; i<li.length; i++){
+		var ahref = document.querySelectorAll("a")[i];
+		if(ahref.innerHTML.toLowerCase().indexOf(filter) > -1){
+			li[i].style.display = "";
+		}else{
+			li[i].style.display = "none";
+		}
+	}
+}
+</script>
 
 	</div>
 </div>
