@@ -32,11 +32,13 @@ class AdminkegiatanController extends Controller
                 'judul_berita' => $request->judul_berita,
                 'isi_berita' => $request->isi_berita,
                 'foto_berita' => $namaFile,
+                'status' => 'Draft',
             ]);
         }else{
             \App\Models\Berita::create([
                 'judul_berita' => $request->judul_berita,
                 'isi_berita' => $request->isi_berita,
+                'status' => 'Draft',
             ]);
         }
         return redirect('kegiatan/index')->with('success', 'Berhasil Menambah Data!');
@@ -65,11 +67,13 @@ class AdminkegiatanController extends Controller
             'judul_berita' => $request->judul_berita,
             'isi_berita' => $request->isi_berita,
             'foto_berita' => $namaFile,
+            'status' => $request->status,
             ]);
         }else{
             $kegiatan->update([
             'judul_berita' => $request->judul_berita,
             'isi_berita' => $request->isi_berita,
+            'status' => $request->status,
             ]);
         }
         return redirect('kegiatan/index')->with('update', 'Berhasil Mengubah Data!');        

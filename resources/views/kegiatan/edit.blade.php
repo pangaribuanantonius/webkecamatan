@@ -34,6 +34,14 @@
 					<span class="text-danger">{{ $message }}</span> <br><br>
 					@enderror
 
+					<div class="form-group">
+						<select name="status" class="form-control" required="required">
+							<option value="">Pilih</option>
+							<option value="Draft">Draft</option>
+							<option value="Posting">Posting</option>
+						</select>
+					</div>
+
 					<button class="btn btn-success btn-icon-split" type="submit">
 						<span class="icon text-white-50">
 							<i class="fas fa-check"></i>
