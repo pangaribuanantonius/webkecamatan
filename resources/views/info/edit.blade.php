@@ -13,6 +13,14 @@
 				<label>Isi</label>
 				<input type="text" name="isi" value="{{ $info->isi }}" class="form-control">
 			</div>
+			<div class="form-group">
+				<label>Status</label>
+				<select name="status" class="form-control" required>
+					<option value="{{ $info->status }}">{{ $info->status }}</option>
+					<option value="Draft">Draft</option>
+					<option value="Posting">Posting</option>
+				</select>
+			</div>
 			<button class="btn btn-success btn-icon-split">
 				<span class="icon text-white-50">
 					<i class="fas fa-check"></i>

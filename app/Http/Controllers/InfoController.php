@@ -19,6 +19,7 @@ class InfoController extends Controller
     public function store(Request $request){
         \App\Models\Info::create([
                 'isi' => $request->isi,
+                'status' =>'Draft',
             ]);
         return redirect('info/index')->with('success', 'Berhasil Menambah Data!');
     }
@@ -30,6 +31,7 @@ class InfoController extends Controller
     public function update(Request $request, Info $info){
         $info->update([
             'isi' => $request->isi,
+            'status' => $request->status,
             ]);
         /*return redirect('info/index')->with(['flashdata' => 'Berhasil']);*/
         return redirect('info/index')->with('update', 'Berhasil Mengubah Data!');

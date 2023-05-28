@@ -37,7 +37,7 @@
 					<div class="form-group">
 						<label>Status</label>
 						<select name="status" class="form-control" required="required">
-							<option value="">Pilih</option>
+							<option value="{{ $kegiatan->status }}">{{ $kegiatan->status }}</option>
 							<option value="Draft">Draft</option>
 							<option value="Posting">Posting</option>
 						</select>
