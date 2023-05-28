@@ -42,7 +42,7 @@
 					@foreach($kegiatan as $kegi)
 					<tr>
 						<td>{{$kegi->judul_berita}}</td>
-						<td>{{ $carbon->parse($kegi->created_at)->isoFormat('D MMMM Y') }}</td>
+						<td>{{$kegi->created_at}}</td>
 						<td class="text-center">
 							<a href="{{ route('kegiatan.edit', $kegi->id) }}"><i class="fas fa-edit"></i></a>
 						</td>
