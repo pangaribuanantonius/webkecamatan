@@ -14,10 +14,28 @@
 			<span class="text">Tambah Data Baru</span>
 		</a> -->
 	</div>
-
 	<div class="card-body">
-		<input type="text" class="form-control" name="" id="cariKat" onkeyup="prosesMenu()" placeholder="Cari Disini...">
-<br>
+		<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+				<thead>
+					<tr>
+						<th>Gambar</th>
+						<th>Keterangan</th>
+						<th>link</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach($berkas as $file) 
+					<tr>
+						<td><img src="{{ \URL::to('').'/konten/berkas/'. $file->berkas}}" width="100"> </td>
+						<td>{{ $file->keterangan }}</td>
+						<td><input type="text" class="form-control" name="" value="http://localhost:81/webkecamatan/public/konten/berkas/{{ $file->berkas }}" readonly="readonly"></td>
+					</tr>
+					@endforeach
+				</tbody>
+			</table>
+	</div>
+
+	
 
 		<!-- <form method="post" action="{{ route('berkas.store') }}" enctype="multipart/form-data">
 			@csrf
@@ -49,37 +67,11 @@
 		</form> -->
 
 
-			@foreach($berkas as $file)
-			<p>
-				<img src="{{ \URL::to('').'/konten/berkas/'. $file->berkas}}" width="100"> 
-				<span>{{ $file->keterangan }}</span>
-			</p>
-			<p>
-				<input type="text" class="form-control" name="" value="http://localhost:81/webkecamatan/public/konten/berkas/{{ $file->berkas }}">
-			</p>
-			@endforeach
+			
 
 
-			<script type="text/javascript">
-	function prosesMenu()
-{
-	var input = document.getElementById("cariKat");
-	var filter = input.value.toLowerCase();
-	var ul = document.getElementById("daftarKategori");
-	var li = document.querySelectorAll("li")
-	console.log(li)
-	for(var i = 0; i<li.length; i++){
-		var ahref = document.querySelectorAll("a")[i];
-		if(ahref.innerHTML.toLowerCase().indexOf(filter) > -1){
-			li[i].style.display = "";
-		}else{
-			li[i].style.display = "none";
-		}
-	}
-}
-</script>
 
 	</div>
-</div>
+
 
 
