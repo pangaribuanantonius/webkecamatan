@@ -29,9 +29,12 @@
 						<br>
 						<input type="file" id="file" name="foto_berita" accept="image/*" required="required">
 					</div>
-					@error('foto_berita')
-					<span class="text-danger">{{ $message }}</span> <br><br>
+					 
+					<div class="form-group">
+				    @error('foto_berita')
+					<span class="text-danger">{{ $message }}</span>
 					@enderror
+					</div>
 
 
 					<button class="btn btn-success btn-icon-split">

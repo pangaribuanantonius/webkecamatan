@@ -8,15 +8,15 @@ use App\Models\Info;
 use App\Models\Berita;
 use App\Models\Foto;
 use App\Models\Video;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 
 class BeritaController extends Controller
 {
     public function index(){
         $carbon = new \Carbon\Carbon;
         $settings = \App\Models\Settings::first();
-        $slider = \App\Models\Slider::All();
-        $marquee = \App\Models\Info::all();
+        $slider = \App\Models\Slider::where('status', 'Posting')->orderBy('created_at', 'desc')->get();
+        $marquee = \App\Models\Info::where('status', 'Posting')->orderBy('created_at', 'desc')->get();
         $berita = \App\Models\Berita::where('status', 'Posting')->orderBy('created_at', 'desc')->limit(6)->get();
         $foto = \App\Models\Foto::limit(6)->get();
         $video = \App\Models\Video::limit(6)->get();

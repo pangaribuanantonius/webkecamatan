@@ -10,7 +10,7 @@ class BeritaAllController extends Controller
     public function beritaall(){
         $carbon = new \Carbon\Carbon;
         $settings = \App\Models\Settings::first();
-        $beritaall = \App\Models\Berita::latest()->paginate(6);
+        $beritaall = \App\Models\Berita::where('status', 'Posting')->latest()->paginate(6);
         return view('beritaall', ['settings' => $settings, 'beritaall' => $beritaall, 'carbon' => $carbon]);
     }
 }

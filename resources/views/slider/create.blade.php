@@ -16,8 +16,14 @@
 			<div class="form-group">
 				<label>Gambar</label>
 				<br>
-				<input type="file" name="foto_halaman" required="required">
+				<input type="file" id="file" name="foto_halaman" accept="image/*" required="required">
 			</div>
+
+			<div class="form-group">
+			 @error('foto_halaman')
+			 <span class="text-danger">{{ $message }}</span>
+			 @enderror
+			</div> 
 
 			<button class="btn btn-success btn-icon-split">
 				<span class="icon text-white-50">
@@ -37,4 +43,36 @@
 		return true;
 	}
 </script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.2.1/compressor.min.js"></script>
+	<script type="text/javascript">
+		document.getElementById('file').addEventListener('change', (e) => {
+			const file = e.target.files[0];
+
+			if (!file) {
+				return;
+			}
+
+			new Compressor(file, {
+				quality: 0.5, //turunkan kualitas 605
+
+				success(result){
+					console.log(result)
+					//tangkap lagi input type filenya
+					fileInput = document.getElementById('file');
+					// buat object datatransfer untuk memasuka file hasil compress ke input type file
+					let fileaku = new File([result], "gambar.jpg")
+					const dataTransfer = new DataTransfer();
+					dataTransfer.items.add(fileaku);
+					fileInput.files = dataTransfer.files;
+					console.log(fileaku)
+				},
+				error(err) {
+					console.log(err.message);
+				},
+			});
+
+		});
+	</script>
+
 @endsection

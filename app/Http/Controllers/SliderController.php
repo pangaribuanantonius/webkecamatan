@@ -19,7 +19,7 @@ class SliderController extends Controller
     public function store(Request $request){
         $datasudahvalidasi = $request->validate([
             'judul' => 'required',
-            'foto_halaman' => 'file|mimes:jpg,png,jpeg|max:1024',
+            'foto_halaman' => 'file|mimes:jpg,png,jpeg|max:3072',
         ]);
         if ($request->hasFile('foto_halaman')) {
             $extFile = $request->foto_halaman->getClientOriginalExtension();
@@ -29,10 +29,12 @@ class SliderController extends Controller
             \App\Models\Slider::create([
                 'judul' => $request->judul,
                 'foto_halaman' => $namaFile,
+                'status' => 'Draft',
             ]);
         }else{
             \App\Models\Slider::create([
                 'judul' => $request->judul,
+                'status' => 'Draft',
             ]);
         }
         return redirect('slider/index')->with('success', 'Berhasil Menambah Data!');
@@ -45,7 +47,7 @@ class SliderController extends Controller
     public function update(Request $request, Slider $slider){
         $datasudahvalidasi = $request->validate([
             'judul' => 'required',
-            'foto_halaman' => 'file|mimes:jpg,png,jpeg|max:1024',
+            'foto_halaman' => 'file|mimes:jpg,png,jpeg|max:3072',
         ]);
         
 
@@ -60,10 +62,12 @@ class SliderController extends Controller
             $slider->update([
             'judul' => $request->judul,
             'foto_halaman' => $namaFile,
+            'status' => $request->status,
             ]);
         }else{
             $slider->update([
             'judul' => $request->judul,
+            'status' => $request->status,
             ]);
         }
         return redirect('slider/index')->with('update', 'Berhasil Mengubah Data!');        

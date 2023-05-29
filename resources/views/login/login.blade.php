@@ -50,13 +50,13 @@
                                         <div class="form-group">
                                             <input type="password" name="password" class="form-control form-control-user" placeholder="Masukkan Password">
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck" required>
                                                 <label class="custom-control-label" for="customCheck">Remember
                                                     Me</label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <button type="submit" name="simpan" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>

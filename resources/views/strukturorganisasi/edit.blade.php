@@ -23,6 +23,13 @@
 			<div class="form-group">
 				<img src="{{ \URL::to('').'/konten/gambar/'. $strukturorganisasi->gambar}}" width="100">
 			</div>
+
+			<div class="form-group">
+				@error('gambar')
+				<span class="text-danger">{{ $message }}</span>
+				@enderror
+			</div>
+
 			<button class="btn btn-success btn-icon-split">
 				<span class="icon text-white-50">
 					<i class="fas fa-check"></i>

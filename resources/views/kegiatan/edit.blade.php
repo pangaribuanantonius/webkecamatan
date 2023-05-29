@@ -30,13 +30,15 @@
 						<img src="{{ \URL::to('').'/konten/foto_berita/'. $kegiatan->foto_berita}}" width="100">
 					</div>
 
-					@error('foto_berita')
-					<span class="text-danger">{{ $message }}</span> <br><br>
+					<div class="form-group">
+				    @error('foto_berita')
+					<span class="text-danger">{{ $message }}</span>
 					@enderror
+					</div>
 
 					<div class="form-group">
 						<label>Status</label>
-						<select name="status" class="form-control" required="required">
+						<select name="status" class="form-control" required>
 							<option value="{{ $kegiatan->status }}">{{ $kegiatan->status }}</option>
 							<option value="Draft">Draft</option>
 							<option value="Posting">Posting</option>
